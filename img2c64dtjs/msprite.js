@@ -42,7 +42,7 @@ function gotFile(file) {
 			catchimage[z] = dt;z+=1;
 		}
 	}
-	for (scnt = 0;scnt<64;scnt+=1){sprite[scnt] = 0;}
+	for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
@@ -67,6 +67,8 @@ function gotFile(file) {
 			z +=1;
 		}			  		
 	}
+	pout = pout +',0';
+	hout = hout + hex(0,2)+',';
 	stroke(255,255,0);
 	strokeWeight(4);
 	noFill();
