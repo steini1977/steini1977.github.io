@@ -60,8 +60,8 @@ function gotFile(file) {
 			if (bit <= 0){
 				bit = 7;
 				ncnt = ncnt + 1;
-				if (ncnt <8){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
-				if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte '}
+				if (ncnt < 8 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
+				if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte ';}
 				if (ncnt == 8 && y == 20){pout = pout + '0<br>';hout = hout + '00<br>';ncnt = 0;}
 				scnt = scnt +1;
 			}
