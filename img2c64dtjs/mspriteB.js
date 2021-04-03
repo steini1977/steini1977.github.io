@@ -63,7 +63,7 @@ function gotFile(file) {
 					ncnt = ncnt + 1;
 					if (ncnt <8){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
 					if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte ';}
-					if (ncnt == 8 && y = 20){pout = pout + String(0);hout = hout + hex(0,2)+'<br>';ncnt = 0;}
+					if (ncnt == 8 && y == 20){pout = pout + String(0);hout = hout + hex(0,2)+'<br>';ncnt = 0;}
 					scnt = scnt +1;
 				}//end of if bit
 				z+=1;
