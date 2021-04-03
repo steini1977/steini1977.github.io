@@ -61,8 +61,7 @@ function gotFile(file) {
 				bit = 7;
 				ncnt = ncnt + 1;
 				if (ncnt <8){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
-				if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte '}
-				if (ncnt == 7 && y == 20){pout = pout +','+ String(0)+',';hout = hout +',' + hex(0,2);ncnt = 0;}
+				if (ncnt == 8){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte '}
 				scnt = scnt +1;
 			}
 			z +=1;
@@ -72,9 +71,9 @@ function gotFile(file) {
 	strokeWeight(4);
 	noFill();
 	rect(0,0,240,210);
-	pout = pout + '.';hout = hout + '.'
-	pout = splitTokens(pout,',.')
-	hout = splitTokens(hout,',.')
+	//pout = pout + '.';hout = hout + '.'
+	//pout = splitTokens(pout,',.')
+	//hout = splitTokens(hout,',.')
     document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
 	} else {console.log('Not an image file!');}
