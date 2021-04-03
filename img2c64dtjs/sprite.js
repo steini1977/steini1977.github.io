@@ -62,12 +62,13 @@ function gotFile(file) {
 					if (ncnt <8){
 						pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';
 						poutR = poutR + String(255-sprite[scnt])+',';houtR = houtR + hex(255+sprite[scnt],2)+',';}
-						if (ncnt == 8){
+						if (ncnt == 8 && y< 20){
 							pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte '
 							poutR = poutR + String(255-sprite[scnt])+'<br>';houtR = houtR + hex(255-sprite[scnt],2)+'<br>';poutR = poutR + 'data ';houtR = houtR + 'byte '}
 							scnt = scnt +1;}
-						z +=1;
-			}//end of for(x)
+				if (ncnt == 8 && y= 20){pout = pout + String(0);hout = hout + hex(0,2)+'<br>';}
+		z +=1;
+		}//end of for(x)
 		}//end of for(y)
 		pout = pout + '.';hout = hout + '.'
 		poutR = poutR +'.';houtR = houtR +'.'
