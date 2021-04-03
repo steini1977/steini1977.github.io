@@ -42,7 +42,7 @@ function gotFile(file) {
 			catchimage[z] = dt;z+=1;
 		}
 	}
-	for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
+	for (scnt = 0;scnt<64;scnt+=1){sprite[scnt] = 0;}
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
