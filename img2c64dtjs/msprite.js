@@ -61,14 +61,13 @@ function gotFile(file) {
 				bit = 7;
 				ncnt = ncnt + 1;
 				if (ncnt <8){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
-				if (ncnt == 8){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte '}
+				if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte '}
+				if (ncnt == 8 && y == 20){pout = pout + String(0)+'<br>';hout = hout + hex(0,2);ncnt = 0;}
 				scnt = scnt +1;
 			}
 			z +=1;
 		}			  		
 	}
-	pout = pout +',0';
-	hout = hout + hex(0,2)+',';
 	stroke(255,255,0);
 	strokeWeight(4);
 	noFill();
