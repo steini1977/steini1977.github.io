@@ -61,7 +61,7 @@ function gotFile(file) {
 				bit = bit - 2;
 				if (bit <= 0){bit = 7;
 					ncnt = ncnt + 1;
-					if (ncnt <8){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
+					if (ncnt < 8 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
 					if (ncnt == 8){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte ';}
 					
 					scnt = scnt +1;
@@ -69,13 +69,15 @@ function gotFile(file) {
 				z+=1;
 			}//end of for (x)
 		}//end of for (y)
+        pout = pout + String(0)+'<br>';
+		hout = hout + hex(0,2)+'<br>';
 		stroke(255,255,0);
 		strokeWeight(4);
 		noFill();
 		rect(0,0,240,210);
-		//pout = pout + '.';hout = hout + '.'// to make a delete marker of last comma in the string
-		//pout = splitTokens(pout,',.')
-		//hout = splitTokens(hout,',.')
+		pout = pout + '.';hout = hout + '.'// to make a delete marker of last comma in the string
+		pout = splitTokens(pout,',.')
+		hout = splitTokens(hout,',.')
 		document.getElementById("dump").innerHTML = pout;//output to HTML page
 		document.getElementById("dump2").innerHTML = hout;//output to HTML page
 	} 
