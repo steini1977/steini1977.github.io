@@ -38,7 +38,7 @@ function gotFile(file) {
 			if (n == 1){dt=1;}
 			if (n == 2){dt=2;}
 			if (n == 4){dt=3;}
-			if (n == 0){dt=3;}
+			if (n == 0){dt=0;}
 			catchimage[z] = dt;z+=1;
 		}
 	}
