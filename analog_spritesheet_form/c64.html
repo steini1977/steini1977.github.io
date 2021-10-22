@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>C64 journey after year 2000</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>MY FIRST SPRITE</h2>
+      <h5>How we did it,mandag 18. oktober 2021</h5>
+      <div class="fakeimg" style="height:200px;"><img src="myfirst.png" height="100%"></div>
+      <p>My first creation.</p>
+      <p>
+	  I wrote this in, on my first commodore 64 in about 1990s.<br>
+	  It was my first sprite meeting with sprites. I got the number from the Commodore user manual. The book came with the computer<br>
+	  <div class="fakeimg" style="height:200px;"><img src="https://obriens.no/5906-home_default/commodore-64-microcomputer-user-manual.jpg" height="100%"></div><br>
+	  (the photo of the book was gather from https://obriens.no site)<br>
+	  And then i decided to make my own sprite. I used this form to Calculate bytes i had to "poke" into the computer. This is my newest form i made:<br>
+	  (click for popout document)
+	  <div class="fakeimg" style="height:200px;"><a href="sprite sheet.svg" target="_blank"><img src="sprite sheet.svg" height="100%"></a></div>
+	  Sprites has 504 points. But it has 63 dataplaces, so to calculate bytes you go from left to right 8x3 bits (3 bytes) and then down 21 for each sprites.
+	  The form also has a possible to create multicolor sprites.. but that contains about 252 points.. (pair)<br>
+	  In this form there are eight data-lines, and 8 byte numbers separated by comma. Last one is alway 0.<br><br>
+	  The reason is:Commodore 64 can only look for data for the sprite at 63 bytes at a time... but jump 64 bytes, for each sprite-frame.<br>
+	  here is a simple program for the Commodore 64 to display sprites.<br>
+	  <pre>
+
+10 data 255,85,170,0,0,0,0,0
+20 data 0,0,0,0,0,0,0,0
+30 data 0,0,0,0,0,0,0,0
+40 data 0,0,0,0,0,0,0,0
+50 data 0,0,0,0,0,0,0,0
+60 data 0,0,0,0,0,0,0,0
+70 data 0,0,0,0,0,0,0,0
+80 data 0,0,0,0,0,0,0,0
+100 for n=0 to 63:rem 64 datapints
+110 read dt:rem reading the data place into dt.
+120 poke 832+n,dt:rem 832 is the datasette buffer in c64
+125 next
+130 poke 2040,13:rem is the frame pointer (13*64)
+140 poke 53248+0,100:poke 53248+1,200:rem x and y posision.#0
+150 poke 53248+16,0:rem extra x disabled
+160 poke 53248+21,1:rem show sprite
+170 poke 53248+23,1:rem double width
+180 poke 53248+28,0:rem mono sprite (1 makes it mutlicolor)
+190 poke 53248+29,1:rem double height
+210 poke 53248+37,1:rem multi color 1 sprite color (1-15)
+220 poke 53248+38,2:REM multi color 2 sprite color (1-15)
+230 poke 53248+39,3:rem multi color 3s prite color (1-15)
+240 poke 53248+27,0:rem front or behind the text 1 or 0
+	</pre>
+	</p>
+	<hr>
+	<p>
+	<h5>Qucik note</h5>
+	i have made a java-script, where it is possible to use jpg png or gif to dump in the browser to get the sprite data.<br>
+	the script seaches for red green blue black (dark) and white (light), and it avages it out.<br>
+	white fields become 0 (see truh).<br>
+	<br>
+	<a href="https://steini1977.github.io/img2c64dtjs/index.html" target="_blank">The link</a> it pops out a window (copy the numbers, past  and write linenumbers.)
+	<!-- https://steini1977.github.io/img2c64dtjs/index.html -->
+	</p>
+    </div>
+    <!-- <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>		
+ -->  </div>
+  
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;"><img src="profilbilde.png" width=100%></div>
+      <p>Born in 1977 computer in 1985s </p>
+    </div>
+    <div class="card">
+      <h3>This page</h3>
+      <div class="fakeimg"><img src="myfirst.png" width="100%"></div><br>
+    </div>
+    <div class="card">
+      <h3>Sosial hangouts<h3>
+      <p>I use twitter (@steini1977)</p>
+	  <p>I use Instagram (steini1977)</p>
+	  <p>I use 500px.com (stein-ove bratthammer)</p>
+	  <p>I use tiktok (rockove)</p>
+	  <p>I use behance.net (stein-ove bratthammer)</p>
+	  <p>I use Discord.com (rockove #9554)</p>
+	  <p>I use twitch.tv (NorSob)</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>C= rules</h2>
+</div>
+
+</body>
+</html>
