@@ -13,7 +13,7 @@ function setup() {
     textAlign(CENTER); // Set the text position 
     textSize(24); // Set the font size 
     fill('white'); // Set the text color 
-    text('Drop image file here', width / 2, height / 2); // Display the text on the screen
+    text('Drop/rutschen image image', width / 2, height / 2); // Display the text on the screen
     cvs.drop(gotFile); // Function to drop the file 
 }
 function draw() {if (img) {image(img, 0, 0, width, height);}}// if dropped 
