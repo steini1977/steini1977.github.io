@@ -77,7 +77,10 @@ body {
 <body>
 
 <div class="header">
-  <h2>C64 journey after year 2000</h2>
+  <h2>
+	  My C64 journey into year 2000.<br>
+	  Meine Reise mit Commodore 64 bis 2000.
+	</h2>
 </div>
 
 <div class="row">
@@ -89,9 +92,12 @@ body {
       <p>My first creation.</p>
       <p>
 	  I wrote this in, on my first commodore 64 in about 1990s.<br>
-	  It was my first sprite meeting with sprites. I got the number from the Commodore user manual. The book came with the computer<br>
+	  It was my first sprite meeting with sprites. I got the number from the Commodore user manual. The book came with the computer<br><br>
+	  Ich habe dies auf meinem ersten Commodore 64 in den 1990er Jahren geschrieben.<br>
+Es war mein erstes Sprite-Treffen mit Sprites. Ich habe die Nummer aus der Commodore-Bedienungsanleitung. Das Buch wurde mit dem Computer geliefert<br>
 	  <div class="fakeimg" style="height:200px;"><img src="https://obriens.no/5906-home_default/commodore-64-microcomputer-user-manual.jpg" height="100%"></div><br>
-	  (the photo of the book was gather from https://obriens.no site)<br>
+	  (the photo of the book was gather from https://obriens.no site. 
+Das Foto des Buches wurde von der Website https://obriens.no gesammelt.)<br>
 	  And then i decided to make my own sprite. I used this form to Calculate bytes i had to "poke" into the computer. This is my newest form i made:<br>
 	  (click for popout document)
 	  <div class="fakeimg" style="height:200px;"><a href="sprite sheet.svg" target="_blank"><img src="sprite sheet.svg" height="100%"></a></div>
@@ -99,7 +105,16 @@ body {
 	  The form also has a possible to create multicolor sprites.. but that contains about 252 points.. (pair)<br>
 	  In this form there are eight data-lines, and 8 byte numbers separated by comma. Last one is alway 0.<br><br>
 	  The reason is:Commodore 64 can only look for data for the sprite at 63 bytes at a time... but jump 64 bytes, for each sprite-frame.<br>
-	  here is a simple program for the Commodore 64 to display sprites.<br>
+	  here is a simple program for the Commodore 64 to display sprites.<br><br>
+	    
+	  Und dann beschloss ich, mein eigenes Sprite zu machen. Ich habe dieses Formular verwendet, um Bytes zu berechnen, die ich in den Computer "poke" musste. Dies ist mein neuestes Formular, das ich erstellt habe:<br>
+(Klicken für Popout-Dokument)
+<div class="fakeimg" style="height:200px;"><a href="spritesheet.svg" target="_blank"><img src="spritesheet.svg" height="100%">< /a></div>
+Sprites hat 504 Punkte. Aber es hat 63 Datenplätze, also um Bytes zu berechnen, gehen Sie von links nach rechts 8x3 Bits (3 Bytes) und dann 21 für jedes Sprite nach unten.
+Das Formular bietet auch die Möglichkeit, mehrfarbige Sprites zu erstellen.. das enthält jedoch etwa 252 Punkte.. (Paar)<br>
+In dieser Form gibt es acht Datenzeilen und 8 Byte-Zahlen, die durch Komma getrennt sind. Der letzte ist immer 0.<br><br>
+Der Grund ist: Commodore 64 kann nur mit 63 Bytes gleichzeitig nach Daten für das Sprite suchen... aber 64 Bytes springen, für jeden Sprite-Frame.<br>
+Hier ist ein einfaches Programm für den Commodore 64, um Sprites anzuzeigen.<br>
 	  <pre>
 
 10 data 255,85,170,0,0,0,0,0
@@ -129,13 +144,19 @@ body {
 	</p>
 	<hr>
 	<p>
-	<h5>Qucik note</h5>
+	<h5>
+		Qucik note.
+		Schnelle Notiz.
+	</h5>
 	i have made a java-script, where it is possible to use jpg png or gif to dump in the browser to get the sprite data.<br>
 	the script seaches for red green blue black (dark) and white (light), and it avages it out.<br>
-	white fields become 0 (see truh).<br>
+	white fields become 0 (see truh).<br><br>
+	Ich habe ein Java-Skript erstellt, bei dem es möglich ist, jpg png oder gif im Browser zu speichern, um die Sprite-Daten zu erhalten.<br>
+Das Skript sucht nach Rot, Grün, Blau, Schwarz (Dunkel) und Weiß (Hell) und wertet es aus.<br>
+weiße Felder werden zu 0 (siehe Wahrheit).<br>
 	<br>
-	<a href="https://steini1977.github.io/img2c64dtjs/index.html" target="_blank">The link</a> it pops out a window (copy the numbers, past  and write linenumbers.)
-	<!-- https://steini1977.github.io/img2c64dtjs/index.html -->
+	<a href="https://steini1977.github.io/img2c64dtjs/index.html" target="_blank">The link/der Internet-Link</a> it pops out a window (copy the numbers, past  and write linenumbers.) Es öffnet sich ein Fenster (kopieren Sie die Zahlen, und schreiben Sie Zeilennummern.)
+<!-- https://steini1977.github.io/img2c64dtjs/index.html -->
 	</p>
     </div>
     <!-- <div class="card">
@@ -149,9 +170,9 @@ body {
   
   <div class="rightcolumn">
     <div class="card">
-      <h2>About Me</h2>
+      <h2>About Me/Fakt über mich</h2>
       <div class="fakeimg" style="height:100px;"><img src="profilbilde.png" width=100%></div>
-      <p>Born in 1977 computer in 1985s </p>
+      <p>Born in 1977/geboren 1977. computer in 1985s </p>
     </div>
     <div class="card">
       <h3>This page</h3>
@@ -159,19 +180,19 @@ body {
     </div>
     <div class="card">
       <h3>Sosial hangouts<h3>
-      <p>I use twitter (@steini1977)</p>
-	  <p>I use Instagram (steini1977)</p>
-	  <p>I use 500px.com (stein-ove bratthammer)</p>
-	  <p>I use tiktok (rockove)</p>
-	  <p>I use behance.net (stein-ove bratthammer)</p>
-	  <p>I use Discord.com (rockove #9554)</p>
-	  <p>I use twitch.tv (NorSob)</p>
+      <p>I use/ich benutze twitter (@steini1977)</p>
+	  <p>I use/ich benutze Instagram (steini1977)</p>
+	  <p>I use/ich benutze 500px.com (stein-ove bratthammer)</p>
+	  <p>I use/ich benutze tiktok (rockove)</p>
+	  <p>I use/ich benutze behance.net (stein-ove bratthammer)</p>
+	  <p>I use/ich benutze Discord.com (rockove #9554)</p>
+	  <p>I use/ich benutze twitch.tv (NorSob)</p>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  <h2>C= rules</h2>
+  <h2>C= rules/ist heilig</h2>
 </div>
 
 </body>
