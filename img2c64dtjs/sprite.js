@@ -18,7 +18,6 @@ function setup() {
 }
 
 function draw() {if (img) {image(img, 0, 0, width, height);}}   
-function gotFile(file) {img = createImg(file.data).hide();}
 function gotFile(file) {  
 	if (file.type === 'image') {// If it's an image file
 		const img = createImg(file.data).hide();// Create an image DOM element but don't show it
