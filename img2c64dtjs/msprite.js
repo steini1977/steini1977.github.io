@@ -31,9 +31,9 @@ function gotFile(file) {
 			gr = green(get(10+(10*2)*x,5+(10*y)));
 			bl =  blue(get(10+(10*2)*x,5+(10*y)));
 			n = 0;dt=0
-			if (rd>200){n = n + pow(2,0);}
-			if (gr>200){n = n + pow(2,1);}
-			if (bl>200){n = n + pow(2,2);}			
+			if (rd>85){n = n + pow(2,0);}
+			if (gr>85){n = n + pow(2,1);}
+			if (bl>85){n = n + pow(2,2);}			
 			if (n == 1){dt=1;}
 			if (n == 2){dt=2;}
 			if (n == 4){dt=3;}
