@@ -31,7 +31,7 @@ function gotFile(file) {
 				dt=0;n = 0;//data and n as a choise picker
 				if (c>42 & c<84){n = 1;}
 				if (c>83 & c<126){n =2;}
-				if (c125> & c<168){n = 3;}
+				if (c>125 & c<168){n = 3;}
 				if (n == pow(2,0)){dt=1;}
 				if (n == pow(2,1)){dt=2;}
 				if (n == pow(2,2)){dt=3;}
