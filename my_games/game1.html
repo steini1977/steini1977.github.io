@@ -12,10 +12,11 @@
 <hr>
 <pre>
 4 rem dsiclaimer - dont remove border game crash
-10 rem "mirror horror{160}#5-9"
+10 rem "mirror horror #5-9"
 20 poke 53281,0:poke 53280,0
 30 poke 646,5:print chr$(147):gosub 200
-40 poke 646,1:a$="{157*35}{down*1}":rem left 35
+40 poke 646,1:a$=""
+42 for cnt=1 to 35:a$=a$+chr$(157):next:a$=a$+chr$(17):rem left 35
 100 poke 214,4:print:poke 211,3
 110 print "use mirror to kill monsters!       ";a$;
 112 print "                                   ";a$;
@@ -27,7 +28,7 @@
 136 print "                                   ";a$;
 138 print "controls:                          ";a$;
 139 print "                                   ";a$;
-140 print "[cursors][1][0][spacebar][return]  "          
+140 print "[cursors][z][x][spacebar][return]  "          
 144 get keyb$
 149 if keyb$="" then goto 144
 154 keyb$=""
@@ -163,11 +164,11 @@
 1099 goto 1070
 2000 :rem
 2001 poke 214,12:print:poke 211,13
-2002 print "{reverse on}{space*11}{reverse off}"
+2002 print chr$(18);"           ";chr$(146)
 2004 poke 214,13:print:poke 211,13
-2006 print "{reverse on} game over {reverse off}"
+2006 print chr$(18);" game over ";chr$(146)
 2008 poke 214,14:print:poke 211,13
-2009 print "{reverse on}{space*11}{reverse off}"
+2009 print chr$(18);"           ";chr$(146)
 2010 for wt=0 to 400:next wt:
 2011 print chr$(147);
 2012 print " lets try again "
