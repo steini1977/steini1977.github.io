@@ -13,10 +13,11 @@
 <hr></p>
 <pre>
 4 rem dsiclaimer - dont remove border game crash
-10 rem "mirror horror{160}#5-9"
+10 rem "mirror horror #5-9"
 20 poke 53281,0:poke 53280,0
 30 poke 646,5:print chr$(147):gosub 200
-40 poke 646,1:a$="{157*35}{down*1}":rem left 35
+40 poke 646,1:a$=""
+42 for cnt=1 to 35:a$=a$+chr$(157):next cnt:a$=a$+chr$(17)
 100 poke 214,4:print:poke 211,3
 110 print "bruk speil til aa drepe monster    ";a$;
 112 print "                                   ";a$;
