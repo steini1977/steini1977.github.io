@@ -31,7 +31,7 @@
 136 poke 214,12:print:poke 211,3
 138 print "controls:"
 139 poke 214,13:print:poke 211,3
-140 print "[cursors]spaziergange.[space bar]drehen.[1]stell.[0]nimme."
+140 print "[cursors]spaziergange.[space bar]drehen.[z]stell.[x]nimme."
 141 poke 214,14:print:poke 211,3
 142 print "[return]erschieb."
 144 get keyb$
@@ -95,7 +95,7 @@
 607 if keyb$=chr$(157)then dx=-1
 608 if keyb$=chr$(17) then dy=+1
 609 if keyb$=chr$(145)then dy=-1
-610 if keyb$="1" or keyb$="0" then gosub800
+610 if keyb$="z" or keyb$="x" then gosub800
 611 if keyb$=chr$(13) then gosub 900
 617 s=peek(1024+px+dx+40*(py+dy))
 618 if s=160 then 602
@@ -115,13 +115,13 @@
 720 if ad=g(4) then ad=g(1):goto 725
 725 poke 1024+px+40*py,ad:return
 800 :rem
-801 if keyb$<>"0" then 810:rem nehmen
+801 if keyb$<>"z" then 810:rem nehmen
 802 for cnt=1 to 4
 804 pk=peek(1024+px+40*py)
 806 if pk<>m(cnt) then 809
 808 poke1024+px+40*py,32:mr=mr+1
 809 next
-810 if keyb$<>"1" then 825:rem platz
+810 if keyb$<>"x" then 825:rem platz
 812 if mr=0 then 825
 814 pk=peek(1024+px+40*py)
 816 if pk<>32 then 825
