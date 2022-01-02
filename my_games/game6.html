@@ -29,7 +29,7 @@
 136 print "                                   ";a$;
 138 print "kontroller:                        ";a$;
 139 print "                                   ";a$;
-140 print "[piltaster][1][0][spacebar][enter]"          
+140 print "[piltaster][z][x][spacebar][enter]"          
 144 get keyb$
 149 if keyb$="" then goto 144
 154 keyb$=""
@@ -111,13 +111,13 @@
 720 if ad=g(4) then ad=g(1):goto 725
 725 poke 1024+px+40*py,ad:return
 800 :rem
-801 if keyb$<>"0" then 810:pick mirr
+801 if keyb$<>"x" then 810:pick mirr
 802 for cnt=1 to 4
 804 pk=peek(1024+px+40*py)
 806 if pk<>m(cnt) then 809
 808 poke1024+px+40*py,32:mr=mr+1
 809 next
-810 if keyb$<>"1" then 825:place mir
+810 if keyb$<>"z" then 825:place mir
 812 if mr=0 then 825
 814 pk=peek(1024+px+40*py)
 816 if pk<>32 then 825
