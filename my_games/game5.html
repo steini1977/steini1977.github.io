@@ -57,33 +57,33 @@
 303 g(1)=107:g(2)=113:g(3)=115:g(4)=114
 400 :rem
 401 for cnt=1 to 10:rem "stille speil"
-402 mx=int(rnd(1)*37)+1
-403 my=int(rnd(1)*22)+1
-404 m=int(rnd(1)*4)+1
+402 mx=int(rnd(0)*37)+1
+403 my=int(rnd(0)*22)+1
+404 m=int(rnd(0)*4)+1
 405 pk=peek(1024+mx+40*my)
 406 if pk<> 32 then 402
 407 poke 1024+mx+40*my,m(m):next
 410 :rem
 411 for cnt=1 to 10:rem "monster ut"
-412 ex=int(rnd(1)*37)+1
-413 ey=int(rnd(1)*22)+1
+412 ex=int(rnd(0)*37)+1
+413 ey=int(rnd(0)*22)+1
 414 pk=peek(1024+ex+40*ey)
 415 if pk<>32 then 412
 416 poke 1024+ex+40*ey,88
 417 poke55296+ex+40*ey,2:next
 420 :rem
 421 rem "kanon plassert"
-422 gx=int(rnd(1)*37)+1
-423 gy=int(rnd(1)*22)+1
-424 g=int(rnd(1)*4)+1
+422 gx=int(rnd(0)*37)+1
+423 gy=int(rnd(0)*22)+1
+424 g=int(rnd(0)*4)+1
 425 pk=peek(1024+gx+40*gy)
 426 if pk<>32 then 422
 427 poke 1024+gx+40*gy,g(g)
 428 poke55296+gx+40*gy,6
 500 :rem
 501 rem "spiller plassert"
-502 px=int(rnd(1)*38)+1
-503 py=int(rnd(1)*23)+1
+502 px=int(rnd(0)*38)+1
+503 py=int(rnd(0)*23)+1
 504 pk=peek(1024+px+40*py)
 505 if pk<>32 then 502
 600 :rem
@@ -126,7 +126,7 @@
 812 if mr=0 then 825
 814 pk=peek(1024+px+40*py)
 816 if pk<>32 then 825
-818 m=int(rnd(1)*4)+1:mr=mr-1
+818 m=int(rnd(0)*4)+1:mr=mr-1
 820 poke 1024+px+40*py,m(m)
 825 return
 900 :rem "boom, straalen"
