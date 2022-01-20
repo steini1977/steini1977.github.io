@@ -16,7 +16,7 @@ function setup() {
     text('Drop/rutschen image image', width / 2, height / 2); // Display the text on the screen
     cvs.drop(gotFile); // Function to drop the file 
 }
-function draw() {if (img) {image(img, 0, 0, width, height);}}// if dropped 
+function draw() {if (img) {image(img, 0, 0, width, height);}noLoop();}// if dropped 
 function gotFile(file) {
 	if (file.type === 'image') {// If it's an image file
 		const img = createImg(file.data).hide();// Create an image DOM element but don't show it	    
