@@ -17,7 +17,7 @@ function setup() {
     cvs.drop(gotFile); // Function to drop the file 
 }
 
-function draw() {if (img) {image(img, 0, 0, width, height);}}   
+function draw() {if (img) {image(img, 0, 0, width, height);}noLoop();}   
 function gotFile(file) {  
 	if (file.type === 'image') {// If it's an image file
 		const img = createImg(file.data).hide();// Create an image DOM element but don't show it
