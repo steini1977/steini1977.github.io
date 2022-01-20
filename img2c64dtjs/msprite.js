@@ -19,6 +19,7 @@ function setup() {
 }
 function draw() {
   if (img) {image(img, 0, 0, width, height);} 
+	noLoop();
 }     
 function gotFile(file) {
     if (file.type === 'image') {// If it's an image file
