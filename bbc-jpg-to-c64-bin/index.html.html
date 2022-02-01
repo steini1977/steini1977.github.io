@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jpg to c64 char</title>
+</head>
+<body>
+<h1>Converter, jpg images to c64 block graphiccs</h1>
+<p>I made this in "BBC basic for windows."</p>
+<p>The programs detect pixels within a "5-dice" configuration.</p>
+<p>This dice is moving 40 a cross x 25 downward over the image to find colors and shapes.</p>
+<p>This is how it is calclated into Bit's<br>
+<img src="JPG to char 64.svg">
+</p>
+<p>
+<h2>here is the program in raw text-format</h2>
+<pre>
+      rem // copy frome BBC For windows,example (windows file lockup procedure)
+      dim fs{lStructSize%, hwndOwner%, hInstance%, lpstrFilter%, \
+      \      lpstrCustomFilter%, nMaxCustFilter%, nFilterIndex%, \
+      \      lpstrFile%, nMaxFile%, lpstrFileTitle%, \
+      \      nMaxFileTitle%, lpstrInitialDir%, lpstrTitle%, \
+      \      flags%, nFileOffset{l&,h&}, nFileExtension{l&,h&}, \
+      \      lpstrDefExt%, lCustData%, lpfnHook%, lpTemplateName%}
+      dim fp{t&(260)}
+      ff$ = "jpeg gif files"+chr$0+"*.jpg;*.gif"+chr$0+chr$0
+      fs.lStructSize% = dim(fs{})
+      fs.hwndOwner% = @hwnd%
+      fs.lpstrFilter% = ptr(ff$)
+      fs.lpstrFile% = fp{}
+      fs.nMaxFile% = dim(fp{}) - 1
+      fs.flags% = 6
+      sys "GetOpenFileName", fs{} to result%
+      if result% filename$ = $$fp{}
+      rem //
+      rem // new proc to get BBC basic user-window hight and width
+      dim rc{l%,t%,r%,b%}
+      sys "GetClientRect", @hwnd%, rc{}
+      Wwidth% = rc.r%:rem // collecting user window-width
+      Wheight% = rc.b%:rem // collecting user window-height
+      rem //
+      rem // init variables used
+      dim map(39,24),rgb%(4),ck%(4),chrcol(39,24):rem // ck% (check a pixel point)
+      rem //
+      rem // procedure to display jpg.
+      procdisplay(filename$,0,Wheight%-711,1137,711):rem // file picture import.
+      rem //
+      rem // chop filepath, make it filename only
+      n%=len(filename$)
+      file$="":a$=""
+      repeat
+        a$=mid$(filename$,n%,1):rem long file path trunking to just filename
+        file$=a$+file$
+        n%=n%-1
+      until a$="\":rem windows path diveder
+      rem //
+      rem //make it a binary end-name.
+      file$=right$(file$,len(file$)-1)
+      file$=left$(file$,len(file$)-4)+"-jpg.prg"
+      rem //
+      rem // read screen and compute
+      gcol 1
+      for y=24 to 0 step -1
+        for x=0 to 39 step +1
+          ck%()=0:rem // zero out all ck%
+          rgb%()=0:rem // zero out all rgb% (rgb% red green blue pixel value)
+          sx=x*28.45*2+28.45/3:rem // sqare-seach rectanlge x
+          sy=y*28.48*2+28.48/4:rem // sqare-seach rectanlge y
+          gcol 1:rem // sets color 1 (here red)
+          rectangle sx,sy,52,52:rem // mark up screen area
+          rgb%(0)=tint(sx+52/4,sy+52/4*3):rem //reads dice 5 pixels-points
+          rgb%(1)=tint(sx+52/4*3,sy+52/4*3)
+          rgb%(2)=tint(sx+52/4*2,sy+52/4*2)
+          rgb%(3)=tint(sx+52/4,sy+52/4*1)
+          rgb%(4)= tint(sx+52/4*3,sy+52/4*1)
+          ck%()=0
+          for n=0 to 4
+            if (rgb%(n) and 255) >64 then ck%(n) = ck%(n) or 1:rem // red test
+            if (rgb%(n) >> 8 and 255) >64 then ck%(n) = ck%(n) or 2:rem // green test
+            if (rgb%(n) >> 16 and 255) >64 then ck%(n) = ck%(n) or 4:rem //blue test
+          next
+          c%=0:map(x,y)=32:rem // sets to c64 space-value
+          if ck%(0) > 1 then c%=c% or 1
+          if ck%(1) > 1 then c%=c% or 2
+          if ck%(2) > 1 then c%=c% or 4
+          if ck%(3) > 1 then c%=c% or 8
+          if ck%(4) > 1 then c%=c% or 16
+          chrcol(x,y)=int((ck%(0)+ck%(1)+ck%(2)+ck%(3)+ck%(4))/5)
+          if c%=3 or c%=7 then map(x,y)=226
+          if c%=9 or c%=13 then map(x,y)=97
+          if c%=24 or c%=28 then map(x,y)=98
+          if c%=18 or c%=22 then map(x,y)=225
+          if c%=31 then map(x,y)=160
+          if c%=15 then map(x,y)=105
+          if c%=23 then map(x,y)=95
+          if c%=30 then map(x,y)=223
+          if c%=29 then map(x,y)=233
+          if c%=21 then map(x,y)=127
+          if c%=14 then map(x,y)=255
+          if c%=1 then map(x,y)=126
+          if c%=2 then map(x,y)=124
+          if c%=16 then map(x,y)=108
+          if c%=8 then map(x,y)=123
+        next
+      next
+      (start):rem a "goto" place
+      rem // main-loop
+      colour 128+0:cls:colour 15:rem black text.bg, white text
+      for y=24 to 0 step -1
+        for x=0 to 39 step +1
+          gcol chrcol(x,y):rem // sets  the colour to the drawings
+          if map(x,y)=160 then rectangle fill 2+x*28.45*2,2+y*28.45*2,54,54
+          if map(x,y)=226 then rectangle fill 2+x*28.45*2,2+y*28.45*2+54/2,54,54/2
+          if map(x,y)=97 then rectangle fill 2+x*28.45*2,2+y*28.45*2,54/2,54
+          if map(x,y)=98 then rectangle fill 2+x*28.45*2,2+y*28.45*2,54,54/2
+          if map(x,y)=225 then rectangle fill 2+x*28.45*2+54/2,2+y*28.45*2,54/2,54
+          if map(x,y)=233 then move 2+x*28.45*2,2+y*28.45*2+54: move 2+x*28.45*2+54,2+y*28.45*2:plot 85,2+x*28.45*2,2+y*28.45*2
+          if map(x,y)=223 then move 2+x*28.45*2,2+y*28.45*2: move 2+x*28.45*2+54,2+y*28.45*2+54:plot 85,2+x*28.45*2+54,2+y*28.45*2
+          if map(x,y)=95 then move 2+x*28.45*2,2+y*28.45*2+54: move 2+x*28.45*2+54,2+y*28.45*2+54:plot 85,2+x*28.45*2+54,2+y*28.45*2
+          if map(x,y)=105 then move 2+x*28.45*2,2+y*28.45*2: move 2+x*28.45*2,2+y*28.45*2+54:plot 85,2+x*28.45*2+54,2+y*28.45*2+54
+          if map(x,y)= 127 then
+            rectangle  fill 2+x*28.45*2+8+28.45,2+y*28.45*2,28.45,28.45
+            rectangle  fill 2+x*28.45*2+8,2+y*28.45*2+28.45,28.45,28.45
+          endif
+          if map(x,y)=255 then
+            rectangle  fill 2+x*28.45*2+8,2+y*28.45*2,28.45,28.45
+            rectangle  fill 2+x*28.45*2+8+28.45,2+y*28.45*2+28.45,28.45,28.45
+          endif
+          if map(x,y)=123 then rectangle fill 2+x*28.45*2,2+y*28.45*2,54/2,54/2
+          if map(x,y)=108 then rectangle fill 2+x*28.45*2+54/2,2+y*28.45*2,54/2,54/2
+          if map(x,y)=124 then rectangle fill 2+x*28.45*2+54/2,2+y*28.45*2+54/2,54/2,54/2
+          if map(x,y)=126 then rectangle fill 2+x*28.45*2,2+y*28.45*2+54/2,54/2,54/2
+        next
+      next
+      rem
+      *FONT Courier New,20,U
+      print tab(0,0);"R=restart D:dump binfile E:end program";
+      input user$:ch=0
+      if right$(user$,1)="r" or right$(user$,1)="R" ch=1
+      if right$(user$,1)="d" or right$(user$,1)="D" ch=2
+      if right$(user$,1)="e" or right$(user$,1)="E" ch=3
+      if ch=0 then goto start
+      if ch=1 then run
+      if ch=3 then cls:print "Progam ended":end
+      file%=openout(file$)
+      for y=0 to 24
+        for x=0 to 39
+          bput#file%,map(x,24-y)
+        next
+      next
+      for y=0 to 24
+        for x=0 to 39
+          bput#file%,chrcol(x,24-y)
+        next
+      next
+      close#file%
+      print tab(0,0);file$;" is saved                                 "
+      repeat
+        keyb$=inkey$(0)
+      until keyb$<>""
+
+      goto start
+
+      rem//
+
+      end
+      def procdisplay(picture$,xpos%,ypos%,xsize%,ysize%)
+      local oleaut32%, olpp%, iid%, gpp%, hmw%, hmh%, picture%, res%
+      sys "LoadLibrary", "OLEAUT32.DLL" to oleaut32%
+      sys "GetProcAddress", oleaut32%, "OleLoadPicturePath" to olpp%
+      if olpp%=0 error 100, "Could not get address of OleLoadPicturePath"
+      dim iid% local 15, picture% local 513
+      sys "MultiByteToWideChar", 0, 0, picture$, -1, picture%, 256
+      iid%!0  = &7BF80980
+      iid%!4  = &101ABF32
+      iid%!8  = &AA00BB8B
+      iid%!12 = &AB0C3000
+      sys olpp%, picture%, 0, 0, 0, iid%, ^gpp%
+      if gpp% = 0 error 100, "OleLoadPicturePath failed"
+      sys !(!gpp%+24), gpp%, ^hmw% : rem. IPicture::get_Width
+      sys !(!gpp%+28), gpp%, ^hmh% : rem. IPicture::get_Height
+      sys !(!gpp%+32), gpp%, @memhdc%, xpos%, ypos%, xsize%, ysize%, 0, \
+      \                      hmh%, hmw%, -hmh%, 0 to res%
+      if res% error 100, "IPicture::Render failed"
+      sys !(!gpp%+8), gpp% : rem. IPicture::Release
+      sys "InvalidateRect", @hwnd%, 0, 0
+      sys "UpdateWindow", @hwnd%
+      endproc
+</pre>
+<p><h2>note - some computer does not have the same screen-resilution and may not work</h2></p>
+<hr>
+<p>
+<h2>here is the orginal image</h2>
+<img src="selfshot_2_s.jpg">
+<h2>here is the output from binary file to "CBM prg Studio screen editor"</h2>
+<img src="c64.jpg">
+</p>
+
+
+<p>My first paragraph.</p>
+
+</body>
+</html>
