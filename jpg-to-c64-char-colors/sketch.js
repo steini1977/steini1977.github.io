@@ -96,11 +96,11 @@ function draw() {
       if (SumRed < 101 && SumGreen > 100 && SumBlue > 100){CharCol=[0,200,200];cout = cout + 'd'}
       if (SumRed > 100 && SumGreen > 100 && SumBlue > 100){CharCol=[200,200,200];cout = cout + 'p'}
       byte = 0;
-      if (test[0] > 100){byte += 1}
-      if (test[1] > 100){byte += 2}
-      if (test[2] > 100){byte += 4}
-      if (test[3] > 100){byte += 8}
-      if (test[4] > 100){byte += 16}
+      if (test[0] > 32){byte += 1}
+      if (test[1] > 32){byte += 2}
+      if (test[2] > 32){byte += 4}
+      if (test[3] > 32){byte += 8}
+      if (test[4] > 32){byte += 16}
       
 
       Blank = true;
