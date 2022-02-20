@@ -18,7 +18,7 @@ let SumBlue = 0; // amount of blue in dice collection
 let CharCol = []; // java rgb display
 function setup() {  
   createCanvas(400,250);
-  prg = prg + '200 poke 53281,0<br>'
+  prg = prg + '200 poke 53281,1:print chr$(19);<br>'
   prg = prg + '201 dim line$(49)<br>'
   prg = prg + '205 for y = 0 to 49<br>'
   prg = prg + '206 read line$(y):next<br>'
@@ -43,7 +43,8 @@ function setup() {
   prg = prg + '285 if ch$="n" then poke1024+x+40*y,127<br>'
   prg = prg + '290 if ch$="o" then poke1024+x+40*y,160<br>'
   prg = prg + '295 if ch$="p" then poke1024+x+40*y,32<br>'
-  prg = prg + '999 next:next<br>rem'
+  prg = prg + '998 next:next<br>'
+  prg = prg + '999 goto 999<br>rem'
  
   //
   roundCount = 0;
