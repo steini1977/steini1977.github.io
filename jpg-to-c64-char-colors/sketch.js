@@ -117,12 +117,6 @@ function draw() {
         fill(CharCol);
         triangle(x*(width/40),y*(height/25),width/40+x*(width/40),height/25+y*(height/25),x*(width/40),height/25+y*(height/25)); 
       }
-      if(byte == 25){
-        pout = pout + 'n';
-        Blank = false;
-        fill(CharCol);
-        triangle(x*(width/40),y*(height/25),width/40+x*(width/40),height/25+y*(height/25),width/40+x*(width/40),y*(height/25)); 
-      }
       if(byte == 15){
         Blank = false;
         pout = pout + 'i';
