@@ -157,7 +157,6 @@ function draw() {
         pout = pout + ','
         cout = cout + ','
       }
-    }
     pout = pout + '<br>';
     cout = cout + '<br>';
   }  
