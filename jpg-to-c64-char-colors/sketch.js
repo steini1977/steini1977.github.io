@@ -29,18 +29,18 @@ function setup() {
   prg = prg + '217 poke 55296+x+40*y,asc(co$)-65<br>'
   prg = prg + '220 if ch$="a" then poke1024+x+40*y,126<br>'
   prg = prg + '225 if ch$="b" then poke1024+x+40*y,124<br>'
-  prg = prg + '230 if ch$="c" then poke1024+x+40*y,108<br>'
+  prg = prg + '230 if ch$="c" then poke1024+x+40*y,226<br>'
   prg = prg + '235 if ch$="d" then poke1024+x+40*y,123<br>'
-  prg = prg + '240 if ch$="e" then poke1024+x+40*y,226<br>'  
-  prg = prg + '245 if ch$="f" then poke1024+x+40*y,225<br>'
-  prg = prg + '250 if ch$="g" then poke1024+x+40*y,98<br>'
-  prg = prg + '255 if ch$="h" then poke1024+x+40*y,97<br>'
-  prg = prg + '260 if ch$="i" then poke1024+x+40*y,105<br>'
-  prg = prg + '265 if ch$="j" then poke1024+x+40*y,95<br>'
-  prg = prg + '270 if ch$="k" then poke1024+x+40*y,233<br>'
-  prg = prg + '275 if ch$="l" then poke1024+x+40*y,223<br>'
-  prg = prg + '280 if ch$="m" then poke1024+x+40*y,255<br>'
-  prg = prg + '285 if ch$="n" then poke1024+x+40*y,127<br>'
+  prg = prg + '240 if ch$="e" then poke1024+x+40*y,97<br>'  
+  prg = prg + '245 if ch$="f" then poke1024+x+40*y,255<br>'
+  prg = prg + '250 if ch$="g" then poke1024+x+40*y,105<br>'
+  prg = prg + '255 if ch$="h" then poke1024+x+40*y,108<br>'
+  prg = prg + '260 if ch$="i" then poke1024+x+40*y,225<br>'
+  prg = prg + '265 if ch$="j" then poke1024+x+40*y,127<br>'
+  prg = prg + '270 if ch$="k" then poke1024+x+40*y,95<br>'
+  prg = prg + '275 if ch$="l" then poke1024+x+40*y,98<br>'
+  prg = prg + '280 if ch$="m" then poke1024+x+40*y,233<br>'
+  prg = prg + '285 if ch$="n" then poke1024+x+40*y,223<br>'
   prg = prg + '290 if ch$="o" then poke1024+x+40*y,160<br>'
   prg = prg + '295 if ch$="p" then poke1024+x+40*y,32<br>'
   prg = prg + '998 next:next<br>'
@@ -105,85 +105,50 @@ function draw() {
       
 
       Blank = true;
-      if(byte == 30){
-        pout = pout + 'k';
-        Blank = false;
-        fill(CharCol);
-        triangle(width/40+x*(width/40),y*(height/25),x*(width/40),height/25+y*(height/25),width/40+x*(width/40),height/25+y*(height/25)); 
+      if(byte == 1 || byte == 5){ Blank = false; pout = pout + 'a'; fill(CharCol);rect(x*(width/40),y*(height/25),width/40/2,height/25/2);}
+      if(byte == 2 || byte == 6){ Blank = false; pout = pout +'b';fill(CharCol);rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25/2)}
+      if(byte == 3 || byte == 7){Blank = false; pout = pout + 'c';fill(CharCol);rect((x*(width/40)),y*(height/25),width/40,height/25/2);}
+      if(byte == 8 || byte == 12 ){Blank = false;pout = pout + 'd';fill(CharCol);rect(x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);}
+      if(byte == 9 || byte == 13){ Blank = false;pout = pout + 'e';fill(CharCol);rect((x*(width/40)),y*(height/25),width/40/2,height/25);}
+      if(byte == 10 || byte == 14){Blank = false;pout = pout + 'f';fill(CharCol);
+                                   rect(width/40/2+x*(width/40),x*(width/40),y*(height/25),width/40/2,height/25/2);
+                                   rect(x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);
+                                  }
+      if(byte == 11 || byte == 15){Blank = false;pout = pout + 'g';fill(CharCol);
+                                   triangle(x*(width/40),y*(height/25),
+                                            width/40+x*(width/40),y*(height/25),
+                                            x*(width/40),height/25+y*(height/25));
+                                  }
+      if(byte == 16 || byte == 20){Blank = false;pout = pout + 'h';fill(CharCol);
+                                   rect(width/40/2+x*(width/40),+y*(height/25),width/40/2,height/25/2);
+                                  }
+      if(byte == 18 || byte == 22){Blank = false;pout = pout + 'i';fill(CharCol);
+                                   rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25);
+                                  }
+      if(byte == 17 || byte == 21){Blank = false;pout = pout + 'j';fill(CharCol);
+                                   rect(x*(width/40),y*(height/25),width/40/2,height/25/2);
+                                   rect(width/40/2+x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);
+                                  }
+      if(byte == 19 || byte == 23){pout = pout + 'k';Blank = false;fill(CharCol);
+                                   triangle(x*(width/40),y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25)+(height/25)); 
+                                  }
+      if(byte == 24 || byte == 28){Blank = false;pout = pout + 'l';fill(CharCol);
+                                   rect(x*(width/40),height/25/2+y*(height/25),width/40,height/25/2);
+                                  }
+      if(byte == 26 || byte == 30){ pout = pout + 'm';Blank = false;fill(CharCol);
+                                   triangle(width/40+x*(width/40),y*(height/25),
+                                            x*(width/40),height/25+y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25));
+                                  }
+      if(byte == 25 || byte == 29){pout = pout + 'n';Blank = false;fill(CharCol);
+                                   triangle(x*(width/40),y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25),
+                                            x*(width/40),height/25+y*(height/25)); 
       }
-      if(byte == 29){
-        pout = pout + 'l';
-        Blank = false;
-        fill(CharCol);
-        triangle(x*(width/40),y*(height/25),width/40+x*(width/40),height/25+y*(height/25),x*(width/40),height/25+y*(height/25)); 
-      }
-      if(byte == 15){
-        Blank = false;
-        pout = pout + 'i';
-        fill(CharCol);
-        triangle(x*(width/40),y*(height/25),width/40+x*(width/40),y*(height/25),x*(width/40),height/25+y*(height/25));
-      }
-      if(byte == 1){
-        Blank = false;
-        pout = pout + 'a';
-        fill(CharCol);
-        rect(x*(width/40),y*(height/25),width/40/2,height/25/2);
-      }
-      if(byte == 2){
-        Blank = false;
-        pout = pout +'b';
-        fill(CharCol);
-        rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25/2)         
-      }
-      if(byte == 3 || byte == 7){
-        Blank = false;
-        pout = pout + 'e';
-        fill(CharCol);
-         rect((x*(width/40)),y*(height/25),width/40,height/25/2);
-      }
-      if(byte == 8 || byte == 12 ){
-        Blank = false;
-        pout = pout + 'd';
-        fill(CharCol);
-        rect(x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);
-      }
-      if(byte == 9 || byte == 13){
-        Blank = false;
-        pout = pout + 'h';
-        fill(CharCol);
-        rect((x*(width/40)),y*(height/25),width/40/2,height/25);         
-      }
-      if(byte == 16 || byte == 20){        
-        Blank = false;
-        pout = pout + 'c';
-        fill(CharCol);
-        rect(width/40/2+x*(width/40),+y*(height/25),width/40/2,height/25/2);         
-      }
-        if(byte == 18 || byte == 22){
-          Blank = false;
-          pout = pout + 'f';
-          fill(CharCol);
-        rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25);         
-      }
-      if(byte == 21 || byte == 17){
-        Blank = false;
-        pout = pout + 'n';
-        fill(CharCol);
-        rect(x*(width/40),y*(height/25),width/40/2,height/25/2);        
-        rect(width/40/2+x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);       
-      }
-      if(byte == 24 || byte == 28){
-         Blank = false;
-         pout = pout + 'g';
-         fill(CharCol);
-         rect(x*(width/40),height/25/2+y*(height/25),width/40,height/25/2);
-        }
-      if(byte == 31){
-        Blank = false;
-        pout = pout + 'o';
-        fill(CharCol);
-        rect(x*(width/40),y*(height/25),width/40,height/25); 
-      }      
+      if(byte == 31){Blank = false;pout = pout + 'o';fill(CharCol);rect(x*(width/40),y*(height/25),width/40,height/25);}      
+        
       if(Blank == true){
         pout = pout + 'p'         
         byte = 0;     
