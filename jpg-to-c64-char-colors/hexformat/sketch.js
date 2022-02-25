@@ -105,7 +105,6 @@ function draw() {
       
 
       Blank = true;
-      Blank = true;
       if(byte == 1 || byte == 5){ Blank = false; pout = pout + '$7e'; fill(CharCol);rect(x*(width/40),y*(height/25),width/40/2,height/25/2);}
       if(byte == 2 || byte == 6){ Blank = false; pout = pout +'$7c';fill(CharCol);rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25/2)}
       if(byte == 3 || byte == 7){Blank = false; pout = pout + '$e2';fill(CharCol);rect((x*(width/40)),y*(height/25),width/40,height/25/2);}
@@ -158,7 +157,7 @@ function draw() {
         pout = pout + ','
         cout = cout + ','
       }
-    }
+    }}
     pout = pout + '<br>';
     cout = cout + '<br>';
   }  
