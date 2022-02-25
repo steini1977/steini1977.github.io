@@ -152,12 +152,13 @@ function draw() {
                                             width/40+x*(width/40),height/25+y*(height/25),
                                             x*(width/40),height/25+y*(height/25)); 
       }
+       if(blank == true){pout = pout + '$20';Blank = false;}
 
       if(x < 39){
         pout = pout + ','
         cout = cout + ','
       }
-    }}
+    }
     pout = pout + '<br>';
     cout = cout + '<br>';
   }  
