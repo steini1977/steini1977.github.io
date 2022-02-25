@@ -152,7 +152,7 @@ function draw() {
                                             width/40+x*(width/40),height/25+y*(height/25),
                                             x*(width/40),height/25+y*(height/25)); 
       }
-      if(Blank == true){pout = pout + '$10';}
+      if(Blank == true){pout = pout + '$20';}
       if(x < 39){
         pout = pout + ','
         cout = cout + ','
