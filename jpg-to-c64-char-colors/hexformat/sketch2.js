@@ -91,7 +91,7 @@ function draw() {
       if (SumRed < 101 && SumGreen < 101 && SumBlue < 101){CharCol=[0,0,0];cout = cout + '$00'}
       if (SumRed > 100 && SumGreen < 101 && SumBlue < 101){CharCol=[200,0,0];cout = cout + '$02'}
       if (SumRed < 101 && SumGreen > 100 && SumBlue < 101){CharCol=[0,200,0];cout = cout + '$05'}
-      if (SumRed < 101 && SumGreen < 101 && SumBlue > 100){CharCol=[0,0,200];cout = cout + '$14'}
+      if (SumRed < 101 && SumGreen < 101 && SumBlue > 100){CharCol=[0,0,200];cout = cout + '$06'}
       if (SumRed > 100 && SumGreen > 100 && SumBlue < 101){CharCol=[200,200,0];cout = cout + '$07'}
       if (SumRed > 100 && SumGreen < 101 && SumBlue > 100){CharCol=[200,0,200];cout = cout + '$04'}
       if (SumRed < 101 && SumGreen > 100 && SumBlue > 100){CharCol=[0,200,200];cout = cout + '$03'}
@@ -105,91 +105,55 @@ function draw() {
       
 
       Blank = true;
-      if(byte == 30){
-        pout = pout + 'k';
-        Blank = false;
-        fill(CharCol);
-        triangle(width/40+x*(width/40),y*(height/25),x*(width/40),height/25+y*(height/25),width/40+x*(width/40),height/25+y*(height/25)); 
+      Blank = true;
+      if(byte == 1 || byte == 5){ Blank = false; pout = pout + '$7e'; fill(CharCol);rect(x*(width/40),y*(height/25),width/40/2,height/25/2);}
+      if(byte == 2 || byte == 6){ Blank = false; pout = pout +'$7c';fill(CharCol);rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25/2)}
+      if(byte == 3 || byte == 7){Blank = false; pout = pout + '$e2';fill(CharCol);rect((x*(width/40)),y*(height/25),width/40,height/25/2);}
+      if(byte == 8 || byte == 12 ){Blank = false;pout = pout + '$7b';fill(CharCol);rect(x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);}
+      if(byte == 9 || byte == 13){ Blank = false;pout = pout + '$61';fill(CharCol);rect((x*(width/40)),y*(height/25),width/40/2,height/25);}
+      if(byte == 10 || byte == 14){Blank = false;pout = pout + '$ff';fill(CharCol);
+                                   rect(width/40/2+x*(width/40),x*(width/40),y*(height/25),width/40/2,height/25/2);
+                                   rect(x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);
+                                  }
+      if(byte == 11 || byte == 15){Blank = false;pout = pout + '$69';fill(CharCol);
+                                   triangle(x*(width/40),y*(height/25),
+                                            width/40+x*(width/40),y*(height/25),
+                                            x*(width/40),height/25+y*(height/25));
+                                  }
+      if(byte == 16 || byte == 20){Blank = false;pout = pout + '$6c';fill(CharCol);
+                                   rect(width/40/2+x*(width/40),+y*(height/25),width/40/2,height/25/2);
+                                  }
+      if(byte == 18 || byte == 22){Blank = false;pout = pout + '$e1';fill(CharCol);
+                                   rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25);
+                                  }
+      if(byte == 17 || byte == 21){Blank = false;pout = pout + '$7f';fill(CharCol);
+                                   rect(x*(width/40),y*(height/25),width/40/2,height/25/2);
+                                   rect(width/40/2+x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);
+                                  }
+      if(byte == 19 || byte == 23){pout = pout + '$5f';Blank = false;fill(CharCol);
+                                   triangle(x*(width/40),y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25)+(height/25)); 
+                                  }
+      if(byte == 24 || byte == 28){Blank = false;pout = pout + '$62';fill(CharCol);
+                                   rect(x*(width/40),height/25/2+y*(height/25),width/40,height/25/2);
+                                  }
+      if(byte == 26 || byte == 30){ pout = pout + '$9e';Blank = false;fill(CharCol);
+                                   triangle(width/40+x*(width/40),y*(height/25),
+                                            x*(width/40),height/25+y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25));
+                                  }
+      if(byte == 25 || byte == 29){pout = pout + '$df';Blank = false;fill(CharCol);
+                                   triangle(x*(width/40),y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25),
+                                            x*(width/40),height/25+y*(height/25)); 
       }
-      if(byte == 29){
-        pout = pout + 'l';
-        Blank = false;
-        fill(CharCol);
-        triangle(x*(width/40),y*(height/25),width/40+x*(width/40),height/25+y*(height/25),x*(width/40),height/25+y*(height/25)); 
+      if(byte == 31){pout = pout + '$10';Blank = false;fill(CharCol);
+                                   triangle(x*(width/40),y*(height/25),
+                                            width/40+x*(width/40),height/25+y*(height/25),
+                                            x*(width/40),height/25+y*(height/25)); 
       }
-      if(byte == 15){
-        Blank = false;
-        pout = pout + 'i';
-        fill(CharCol);
-        triangle(x*(width/40),y*(height/25),width/40+x*(width/40),y*(height/25),x*(width/40),height/25+y*(height/25));
-      }
-      if(byte == 1){
-        Blank = false;
-        pout = pout + '$7e';
-        fill(CharCol);
-        rect(x*(width/40),y*(height/25),width/40/2,height/25/2);
-      }
-      if(byte == 2){
-        Blank = false;
-        pout = pout +'$7c';
-        fill(CharCol);
-        rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25/2)         
-      }
-      if(byte == 3 || byte == 7){
-        Blank = false;
-        pout = pout + '$e2';
-        fill(CharCol);
-         rect((x*(width/40)),y*(height/25),width/40,height/25/2);
-      }
-      if(byte == 8 || byte == 12 ){
-        Blank = false;
-        pout = pout + '$7b';
-        fill(CharCol);
-        rect(x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);
-      }
-      if(byte == 9 || byte == 13){
-        Blank = false;
-        pout = pout + '$61';
-        fill(CharCol);
-        rect((x*(width/40)),y*(height/25),width/40/2,height/25);         
-      }
-      if(byte == 16 || byte == 20){        
-        Blank = false;
-        pout = pout + '$6c';
-        fill(CharCol);
-        rect(width/40/2+x*(width/40),+y*(height/25),width/40/2,height/25/2);         
-      }
-        if(byte == 18 || byte == 22){
-          Blank = false;
-          pout = pout + '$e1';
-          fill(CharCol);
-        rect(width/40/2+(x*(width/40)),y*(height/25),width/40/2,height/25);         
-      }
-      if(byte == 21 || byte == 17){
-        Blank = false;
-        pout = pout + '$7f';
-        fill(CharCol);
-        rect(x*(width/40),y*(height/25),width/40/2,height/25/2);        
-        rect(width/40/2+x*(width/40),height/25/2+y*(height/25),width/40/2,height/25/2);       
-      }
-      if(byte == 24 || byte == 28){
-         Blank = false;
-         pout = pout + '$62';
-         fill(CharCol);
-         rect(x*(width/40),height/25/2+y*(height/25),width/40,height/25/2);
-        }
-      if(byte == 31){
-        Blank = false;
-        pout = pout + '$a0';
-        fill(CharCol);
-        rect(x*(width/40),y*(height/25),width/40,height/25); 
-      }      
-      if(Blank == true){
-        pout = pout + '$20'         
-        byte = 0;     
-        fill(CharCol);
-        rect(x*(width/40),y*(height/25),width/40,height/25); 
-      }
+
       if(x < 39){
         pout = pout + ','
         cout = cout + ','
