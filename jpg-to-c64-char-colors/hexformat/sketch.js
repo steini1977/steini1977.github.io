@@ -159,6 +159,7 @@ function draw() {
       }
     pout = pout + '<br>';
     cout = cout + '<br>';
+      }
   }  
   document.getElementById("dump").innerHTML = pout+'<br><br>'+cout+prg+'<br>';   
   }
