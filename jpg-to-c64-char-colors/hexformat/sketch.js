@@ -150,7 +150,7 @@ function draw() {
       if(byte == 31){Blank = false;pout = pout + '$a0';fill(CharCol);rect(x*(width/40),y*(height/25),width/40,height/25);}      
         
       if(Blank == true){
-        pout = pout + 'p'         
+        pout = pout + '$20'         
         byte = 0;     
         fill(CharCol);
         rect(x*(width/40),y*(height/25),width/40,height/25); 
