@@ -155,6 +155,7 @@ function draw() {
         fill(CharCol);
         rect(x*(width/40),y*(height/25),width/40,height/25); 
       }
+        if(x < 39){pout = pout + ',';cout = cout +',';}
     }
     pout = pout + char(34)+'<br>';
     cout = cout + char(34)+'<br>';
