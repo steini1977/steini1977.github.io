@@ -147,12 +147,12 @@ function draw() {
                                             width/40+x*(width/40),height/25+y*(height/25),
                                             x*(width/40),height/25+y*(height/25)); 
       }
+      }
       if(byte == 31){pout = pout + '$10';Blank = false;fill(CharCol);
                                    triangle(x*(width/40),y*(height/25),
                                             width/40+x*(width/40),height/25+y*(height/25),
                                             x*(width/40),height/25+y*(height/25)); 
       }
-       if(Blank == true){pout = pout + '$20';Blank = false;}
 
       if(x < 39){
         pout = pout + ','
