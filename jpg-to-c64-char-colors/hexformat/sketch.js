@@ -11,13 +11,14 @@ let Blank = Boolean; // is no char
 let test = []; // tests the 5 dice points
 let written = Boolean; // line draw rounds
 let roundCount; // rounds 
-let prg = ''; // program printout
+/*let prg = ''; // program printout*/
 let SumRed = 0; // amount of red in dice collection
 let SumGreen = 0; // amount of green in dice collection
 let SumBlue = 0; // amount of blue in dice collection
 let CharCol = []; // java rgb display
 function setup() {  
   createCanvas(400,250);
+  /*
   prg = prg + '200 poke 53281,1:print chr$(19);<br>'
   prg = prg + '201 dim line$(49)<br>'
   prg = prg + '205 for y = 0 to 49<br>'
@@ -45,7 +46,7 @@ function setup() {
   prg = prg + '295 if ch$="p" then poke1024+x+40*y,32<br>'
   prg = prg + '998 next:next<br>'
   prg = prg + '999 goto 999<br>rem'
- 
+ */
   //
   roundCount = 0;
   inp = createFileInput(handleFile);
@@ -160,7 +161,7 @@ function draw() {
     pout = pout + char(34)+'<br>';
     cout = cout + char(34)+'<br>';
   }  
-  document.getElementById("dump").innerHTML = pout+cout+prg+'<br>';   
+  document.getElementById("dump").innerHTML = pout+'<br><br>'cout+'<br>';   
   }
 if(roundCount == 3){noLoop();}
 }
