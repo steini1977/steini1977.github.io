@@ -57,10 +57,10 @@
 330 tx=int(rnd(1)*235)+20 <br>
 335 ty=int(rnd(1)*185)+50 <br>
 400 rem <br>
-405 if x&#139tx then x=x+1 <br>
-410 if x&#155tx then x=x-1 <br>
-415 if y&#139ty then y=y+1 <br>
-420 if y&#155ty then y=y-1 <br>
+405 if x<tx then x=x+1 <br>
+410 if x>tx then x=x-1 <br>
+415 if y<ty then y=y+1 <br>
+420 if y>ty then y=y-1 <br>
 421 if x<>tx or y<>ty then 424 <br>
 422 tx=int(rnd(1)*235)+20 <br>
 423 ty=int(rnd(1)*184)+50 <br>
