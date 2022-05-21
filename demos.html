@@ -57,21 +57,22 @@
 330 tx=int(rnd(1)*235)+20 
 335 ty=int(rnd(1)*185)+50 
 400 rem (less) (more than)
-405 if x l tx then x=x+1 
-410 if x m tx then x=x-1 
-415 if y l ty then y=y+1 
-420 if y m ty then y=y-1 
-421 if x<>tx or y<>ty then 424 
-422 tx=int(rnd(1)*235)+20 
-423 ty=int(rnd(1)*184)+50 
-424 poke 53248+2,tx:poke 53248+3,ty 
-425 poke 53248+0,x:poke53248+1,y 
-426 cnt=cnt+1 
-430 if cnt=1 then poke 2040,13 
-435 if cnt=2 then poke 2040,14 
-440 if cnt=3 then poke 2040,15 
-445 if cnt=4 then poke 2040,14 
-450 if cnt=5 then cnt=0 
+405 if x l tx then x=x+1
+410 if x m tx then x=x-1
+415 if y l ty then y=y+1:s=1
+416 if y , ty then y=y-1:s=0
+420 if y = ty then s=0
+421 if x<>tx or y<>ty then 424
+422 tx=int(rnd(1)*235)+20
+423 ty=int(rnd(1)*184)+50
+424 poke 53248+2,tx:poke 53248+3,ty
+425 poke 53248+0,x:poke53248+1,y
+426 cnt=cnt+1:if s=1 then cnt=3
+430 if cnt=1 then poke 2040,13
+435 if cnt=2 then poke 2040,14
+440 if cnt=3 then poke 2040,15
+445 if cnt=4 then poke 2040,14
+450 if cnt=5 then cnt=0
 455 goto 400
 </pre>
 <hr>
