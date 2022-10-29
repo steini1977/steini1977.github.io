@@ -24,7 +24,7 @@ function draw() {if (img) {image(img, 0, 0, width, height);}noLoop();}
 function gotFile(file) {  
 	if (file.type === 'image') {// If it's an image file
 		const img = createImg(file.data).hide();// Create an image DOM element but don't show it
-		image(img,0,0,24,21);// Draw the image onto the canvas
+		image(img,0,0,240,210);// Draw the image onto the canvas
 	} else {
     console.log('Not an image file!');
 	}
@@ -33,9 +33,9 @@ function calcSprite(){
 		z=0;
 		for(y = 0;y<21;y++){
 			for(x = 0;x<24;x+=1){			
-				rd = red(get(x,y));
-				gr= green(get(x,y));
-				bl = blue(get(x,y));
+				rd = red(get(5+x*10,5+y*10));
+				gr= green(get(5+x*10,5+y*10));
+				bl = blue(get(5+x*10,5+y*10));
 				lum = (rd + gr + bl)/3
 				dt=0;n = 0;
 				if (lum < 100){n = 1;}
