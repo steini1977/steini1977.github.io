@@ -28,6 +28,7 @@ function gotFile(file) {
 	} else {
     console.log('Not an image file!');
 	}
+}
 function calcSprite(){
 		z=0;
 		for(y = 0;y<21;y++){
