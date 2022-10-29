@@ -25,7 +25,7 @@ function gotFile(file) {
     if (file.type === 'image') {// If it's an image file
     const img = createImg(file.data).hide();// Create an image DOM element but don't show it	    		
 	image(img,0,0,240,210);// Draw the image onto the canvas
-    z=0;
+   /* z=0;
 	for(y = 0;y<21;y++){// sprite y color picker vector
 		for(x = 0;x<12;x++){// sprite x color picker vector			
 			rd =   red(get(10+(10*2)*x,5+(10*y)));
@@ -46,6 +46,7 @@ function gotFile(file) {
 			catchimage[z] = dt;z+=1;
 		}
 	}
+	
 	for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
 	scnt = 0;
 	bit = 7;
@@ -81,5 +82,5 @@ function gotFile(file) {
 	hout = splitTokens(hout,',.');
     document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
-	} else {console.log('Not an image file!');}
+	*/}  else {console.log('Not an image file!');}
 }
