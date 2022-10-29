@@ -87,7 +87,7 @@ function gotFile(file) {
 	document.getElementById("dump2").innerHTML = hout;
 	*/}  else {console.log('Not an image file!');}
 }
-calcSprite(){
+function calcSprite(){
 	 z=0;
 	for(y = 0;y<21;y++){// sprite y color picker vector
 	 for(x = 0;x<12;x++){// sprite x color picker vector			
