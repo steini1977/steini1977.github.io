@@ -9,7 +9,10 @@ let col = 0;
 let typeTexts;
 let cnt=0;
 function setup() {  
-    var cvs = createCanvas(240, 210); // Create Canvas of given size                   
+    var cvs = createCanvas(240, 210); // Create Canvas of given size   
+    button = createButton('click me');
+    button.position(0, 0);
+    button.mousePressed(calcSprite);
     background(200,200,200); // Set the background color         
     textAlign(CENTER); // Set the text position           
     textSize(24); // Set the font size           
@@ -84,3 +87,61 @@ function gotFile(file) {
 	document.getElementById("dump2").innerHTML = hout;
 	*/}  else {console.log('Not an image file!');}
 }
+calcSprite(){
+	 z=0;
+	for(y = 0;y<21;y++){// sprite y color picker vector
+	 for(x = 0;x<12;x++){// sprite x color picker vector			
+		rd =   red(get(10+(10*2)*x,5+(10*y)));
+		gr = green(get(10+(10*2)*x,5+(10*y)));
+		bl =  blue(get(10+(10*2)*x,5+(10*y)));
+		n = 0;dt=0
+		if (rd>85){n = n + pow(2,0);}
+		if (gr>85){n = n + pow(2,1);}
+		if (bl>85){n = n + pow(2,2);}			
+		if (n == 1){dt=1;}
+		if (n == 2){dt=2;}
+		if (n == 4){dt=3;}
+		if (n == 3){dt=1;}
+		if (n == 5){dt=2;}
+		if (n == 6){dt=3;}
+		if (n == 0){dt=0;}
+		if (n == 7){dt=0;}
+		catchimage[z] = dt;z+=1;
+		}
+	}	
+	for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
+	scnt = 0;
+	bit = 7;
+	ncnt = 0;
+	pout = 'data ';
+	hout = 'byte ';
+    z=0;
+    for (y = 0;y<21;y+=1){
+		for (x = 0;x<12;x+=1){
+			if(catchimage[z] == 0){stroke(255,255,255);fill(255,255,255);}
+			if(catchimage[z] == 1){stroke(200,0,0);fill(200,0,0);sprite[scnt] = sprite[scnt] + pow(2,bit);}
+			if(catchimage[z] == 2){stroke(0,200,0);fill(0,200,0);sprite[scnt] = sprite[scnt] + pow(2,bit-1);}
+			if(catchimage[z] == 3){stroke(0,0,200);fill(0,0,200);sprite[scnt] = sprite[scnt] + pow(2,bit)+pow(2,bit-1);}		
+			rect(x * 10 * 2,y*10,20,10);
+			bit = bit - 2;
+			if (bit <= 0){
+				bit = 7;
+				ncnt = ncnt + 1;
+				if (ncnt < 8 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
+				if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte ';}
+				if (ncnt == 7 && y == 20){pout = pout + String(0)+'<br>';hout = hout +hex(0,2)+'<br>';ncnt = 0;}
+				scnt = scnt +1;
+			}
+			z +=1;
+		}			  		
+	}
+	stroke(255,255,0);
+	strokeWeight(4);
+	noFill();
+	rect(0,0,240,210);
+	pout = pout + '.';hout = hout + '.';
+	pout = splitTokens(pout,',.');
+	hout = splitTokens(hout,',.');
+        document.getElementById("dump").innerHTML = pout;
+	document.getElementById("dump2").innerHTML = hout;
+	}
