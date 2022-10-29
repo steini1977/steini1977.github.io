@@ -11,7 +11,7 @@ let cnt=0;
 function setup() {  
     var cvs = createCanvas(240, 210); // Create Canvas of given size   
     button = createButton('click me');
-    button.position(0, cvs.height);
+    button.position(cvs.width+10, cvs.height);
     button.mousePressed(calcSprite);
     background(200,200,200); // Set the background color         
     textAlign(CENTER); // Set the text position           
