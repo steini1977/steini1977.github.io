@@ -10,6 +10,9 @@ let cnt=0;
 function setup() {
     var cvs = createCanvas(240, 210);  // Create Canvas of given size  
     background(200,200,200); // Set the background color 
+    button = createButton('click me');
+    button.position(cvs.width+10, cvs.height);
+    button.mousePressed(calcSprite);
     textAlign(CENTER); // Set the text position 
     textSize(24); // Set the font size 
     fill('white'); // Set the text color 
@@ -21,7 +24,10 @@ function gotFile(file) {
 	if (file.type === 'image') {// If it's an image file
 		const img = createImg(file.data).hide();// Create an image DOM element but don't show it	    
 		image(img,0,0,240,210);// Draw the image onto the canvas		
-		/*
+} 
+	else {console.log('Not an image file!');}
+}// end of "gotfile" function
+function calcSprite(){
 		z=0;c=0;
 		for(y = 0;y<21;y++){// row count
 			for(x = 0;x<12;x++){//colum count
@@ -75,8 +81,5 @@ function gotFile(file) {
 		pout = splitTokens(pout,',.')
 		hout = splitTokens(hout,',.')
 		document.getElementById("dump").innerHTML = pout;//output to HTML page
-		document.getElementById("dump2").innerHTML = hout;//output to HTML page */
-	} 
-	else 
-	{console.log('Not an image file!');}
-}// end of "gotfile" function
+		document.getElementById("dump2").innerHTML = hout;//output to HTML page 
+}
