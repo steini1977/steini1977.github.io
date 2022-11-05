@@ -50,7 +50,8 @@ function calcSprite(){
 		scnt = 0;
 		bit = 7;
 		ncnt = 0;
-		pout = 'data '; 		hout = 'byte ';
+		pout = string(100+scnt)+' data '; 		
+		hout = 'byte ';
 		poutR ='data ';
 		houtR ='byte ';
 		z=0;
