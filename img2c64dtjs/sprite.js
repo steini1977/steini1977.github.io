@@ -74,7 +74,7 @@ function calcSprite(){
 					if (ncnt == 8 && y< 20){
 						pout = pout + String(sprite[scnt])+'<br>';
 						hout = hout + hex(sprite[scnt],2)+'<br>';
-						ncnt = 0;pout = pout + String(100+y)' data ';
+						ncnt = 0;pout = pout + String(100+y)+' data ';
 						hout = hout + 'byte '
 						poutR = poutR + String(255-sprite[scnt])+'<br>';
 						houtR = houtR + hex(255-sprite[scnt],2)+'<br>';
