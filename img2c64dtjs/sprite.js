@@ -50,8 +50,7 @@ function calcSprite(){
 		scnt = 0;
 		bit = 7;
 		ncnt = 0;
-		pout = ''; //'data '; // orginal
-		hout = 'byte ';
+		pout = 'data '; 		hout = 'byte ';
 		poutR ='data ';
 		houtR ='byte ';
 		z=0;
@@ -65,7 +64,7 @@ function calcSprite(){
 				rect(25*10+x * 10,y*10,10,10);
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
-					if(x == 0 || x==8 || x==17){pout=pout+string(1000+ncnt); // remove if trouble     
+				
 					if (ncnt < 8){
 						pout = pout + String(sprite[scnt])+',';
 						hout = hout + hex(sprite[scnt],2)+',';
