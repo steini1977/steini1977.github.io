@@ -16,19 +16,10 @@ function setup() {
     textAlign(CENTER); // Set the text position    
     textSize(24); // Set the font size           
     fill('white'); // Set the text color           
-    text('Drop/reiten image', width / 2, height / 2); // Display the text on the screen     
-    cvs.drop(gotFile); // Function to drop the file 
+    text('jpeg image', width / 2, height / 2); // Display the text on the screen     
 }
 
 function draw() {if (img) {image(img, 0, 0, width, height);}noLoop();}   
-function gotFile(file) {  
-	if (file.type === 'image') {// If it's an image file
-		const img = createImg(file.data).hide();// Create an image DOM element but don't show it
-		image(img,0,0,240,210);// Draw the image onto the canvas
-	} else {
-    console.log('Not an image file!');
-	}
-}
 function calcSprite(){
 		z=0;
 		for(y = 0;y<21;y++){
