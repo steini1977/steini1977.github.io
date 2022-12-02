@@ -1,32 +1,33 @@
-let catchimage = [];
-let sprite = [];let bit = 7;
-let scnt = 0;
-let x = 0;let y = 0;let z = 0;
-let rd = 0;let gr = 0;let bl = 0;
-let dt = 0;
-let n = 0;
-let typeTexts;
-let cnt=0;
+let input;// brows files on device (jpg).
+let img;// image display container. 
+
+let catchimage = [];// pixel read.
+let sprite = [];let bit = 7;// sprite cell value. and bit calc variable.
+let scnt = 0;// sprite cell amount.
+let x = 0;let y = 0;let z = 0;// sprite x counter (width) y counter (hight)
+let rd = 0;let gr = 0;let bl = 0;// red pixel value, green pixel value, blue pixel value.
+let dt = 0;//data counter.
+let n = 0;// desision maker.
 function setup() {
-    var cvs = createCanvas(240, 210);  // Create Canvas of given size  
+    var cvs = createCanvas(240*2, 210);  // Create Canvas of given size  
     background(200,200,200); // Set the background color 
-    button = createButton('click me');
+    button = createButton('calculate');
     button.position(cvs.width+10, cvs.height);
     button.mousePressed(calcSprite);
-    textAlign(CENTER); // Set the text position 
-    textSize(24); // Set the font size 
-    fill('white'); // Set the text color 
-    text('Drop/rutschen image image', width / 2, height / 2); // Display the text on the screen
-    cvs.drop(gotFile); // Function to drop the file 
+    background(200,200,200);
+	input = createFileInput(handleFile);
+	input.position(width+10, +40);
+	}
+function handleFile(file) {
+  print(file);
+  if (file.type === 'image') {
+    img = createImg(file.data, '');
+    img.hide();
+  } else {
+    img = null;
+  }
 }
-function draw() {if (img) {image(img, 0, 0, width, height);}noLoop();}// if dropped 
-function gotFile(file) {
-	if (file.type === 'image') {// If it's an image file
-		const img = createImg(file.data).hide();// Create an image DOM element but don't show it	    
-		image(img,0,0,240,210);// Draw the image onto the canvas		
-} 
-	else {console.log('Not an image file!');}
-}// end of "gotfile" function
+function draw() {if (img) {image(img, 0, 0, width/2,height)};}
 function calcSprite(){
 		z=0;c=0;
 		for(y = 0;y<21;y++){// row count
@@ -59,12 +60,13 @@ function calcSprite(){
 				if(catchimage[z] == 1){stroke(200,0,0);fill(200,0,0);sprite[scnt] = sprite[scnt] + pow(2,bit);}
 				if(catchimage[z] == 2){stroke(0,200,0);fill(0,200,0);sprite[scnt] = sprite[scnt] + pow(2,bit-1);}
 				if(catchimage[z] == 3){stroke(0,0,200);fill(0,0,200);sprite[scnt] = sprite[scnt] + pow(2,bit)+pow(2,bit-1);}
-				rect(x * 10 * 2,y*10,20,10);
+				rect(12*10*2+x * 10 * 2,y*10,20,10);
 				bit = bit - 2;
 				if (bit <= 0){bit = 7;
 					ncnt = ncnt + 1;
+					if (ncnt == 1 && y == 0){pout = String(100+y)+ ' data ';}
 					if (ncnt < 8 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
-					if (ncnt == 8){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte ';}
+					if (ncnt == 8){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + String(100+y) +' data ';hout = hout + 'byte ';}
 					
 					scnt = scnt +1;
 				}//end of if bit
