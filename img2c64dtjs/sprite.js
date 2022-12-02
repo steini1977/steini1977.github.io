@@ -1,3 +1,5 @@
+let input;
+let img;
 let catchimage = [];let sprite = [];let bit = 7;let scnt = 0;
 let x = 0;let y = 0;let z = 0;
 let rd = 0;let gr = 0;let bl = 0;
@@ -13,13 +15,20 @@ function setup() {
     button = createButton('click me');
     button.position(cvs.width+10, cvs.height);
     button.mousePressed(calcSprite);
-    textAlign(CENTER); // Set the text position    
-    textSize(24); // Set the font size           
-    fill('white'); // Set the text color           
-    text('jpeg image', width / 2, height / 2); // Display the text on the screen     
+	input = createFileInput(handleFile);
+	input.position(width, 0);
+}
+function handleFile(file) {
+  print(file);
+  if (file.type === 'image') {
+    img = createImg(file.data, '');
+    img.hide();
+  } else {
+    img = null;
+  }
 }
 
-function draw() {if (img) {image(img, 0, 0, width, height);}noLoop();}   
+function draw() {if (img) {image(img, 0, 0, width/2, height);}}   
 function calcSprite(){
 		z=0;
 		for(y = 0;y<21;y++){
@@ -43,9 +52,10 @@ function calcSprite(){
 		ncnt = 0;
 		pout = String(100+scnt)+' data '; 		
 		hout = 'byte ';
-		poutR ='data ';
+		poutR = String(100+scnt)+' data ';
 		houtR ='byte ';
 		z=0;
+		img = null;
 		for (y = 0;y<21;y+=1){
 			for (x = 0;x<24;x+=1){
 				if(catchimage[z] == 0){stroke(255,255,255);fill(255,255,255);}
@@ -69,7 +79,7 @@ function calcSprite(){
 						hout = hout + 'byte '
 						poutR = poutR + String(255-sprite[scnt])+'<br>';
 						houtR = houtR + hex(255-sprite[scnt],2)+'<br>';
-						poutR = poutR + 'data ';houtR = houtR + 'byte '}
+						poutR = poutR + String(100+y)+' data ';houtR = houtR + 'byte '}
 						scnt = scnt +1;}
 				if (ncnt == 7 && y == 20){
 					pout = pout + String(0);
@@ -86,5 +96,5 @@ function calcSprite(){
 		document.getElementById("dump").innerHTML = pout;
 		document.getElementById("dump2").innerHTML = hout;
 		document.getElementById("dumpR").innerHTML = poutR;
-		document.getElementById("dumpR2").innerHTML = houtR;	
+		document.getElementById("dumpR2").innerHTML = houtR;
 }

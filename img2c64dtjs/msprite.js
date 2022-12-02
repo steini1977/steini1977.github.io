@@ -1,3 +1,5 @@
+let input;
+let img;
 let catchimage = [];
 let sprite = [];let bit = 7;
 let scnt = 0;
@@ -6,30 +8,28 @@ let rd = 0;let gr = 0;let bl = 0;
 let dt = 0;
 let n = 0;
 let col = 0;
-let typeTexts;
 let cnt=0;
 function setup() {  
-    var cvs = createCanvas(240, 210); // Create Canvas of given size   
-    button = createButton('click me');
-    button.position(cvs.width+10, cvs.height);
+    var cvs = createCanvas(240*2, 210); // Create Canvas of given size   
+    button = createButton('calculate');
+    button.position(cvs.width+20, cvs.height);
     button.mousePressed(calcSprite);
     background(200,200,200); // Set the background color         
-    textAlign(CENTER); // Set the text position           
-    textSize(24); // Set the font size           
-    fill('white'); // Set the text color           
-    text('Drop/rutschen image ', width / 2, height / 2);// Display the text on the screen           
-    cvs.drop(gotFile);// Function to drop the file 
+	input = createFileInput(handleFile);
+	input.position(width+10, +40);
+
+1}
+function handleFile(file) {
+  print(file);
+  if (file.type === 'image') {
+    img = createImg(file.data, '');
+    img.hide();
+  } else {
+    img = null;
+  }
 }
-function draw() {
-  if (img) {image(img, 0, 0, width, height);} 
-	noLoop();
-}     
-function gotFile(file) {
-    if (file.type === 'image') {// If it's an image file
-    const img = createImg(file.data).hide();// Create an image DOM element but don't show it	    		
-	image(img,0,0,240,210);// Draw the image onto the canvas
-   }  else {console.log('Not an image file!');}
-}
+function draw() {if (img) {image(img, 0, 0, width/2,height)};}
+
 function calcSprite(){
 	z=0;
 	for(y = 0;y<21;y++){// sprite y color picker vector
@@ -47,8 +47,8 @@ function calcSprite(){
 		if (n == 3){dt=1;}
 		if (n == 5){dt=2;}
 		if (n == 6){dt=3;}
-		if (n == 0){dt=0;}
-		if (n == 7){dt=1;}
+		if (n == 0){dt=3;}
+		if (n == 7){dt=0;}
 		catchimage[z] = dt;z+=1;
 		}
 	}	
@@ -65,7 +65,7 @@ function calcSprite(){
 			if(catchimage[z] == 1){stroke(200,0,0);fill(200,0,0);sprite[scnt] = sprite[scnt] + pow(2,bit);}
 			if(catchimage[z] == 2){stroke(0,200,0);fill(0,200,0);sprite[scnt] = sprite[scnt] + pow(2,bit-1);}
 			if(catchimage[z] == 3){stroke(0,0,200);fill(0,0,200);sprite[scnt] = sprite[scnt] + pow(2,bit)+pow(2,bit-1);}		
-			rect(x * 10 * 2,y*10,20,10);
+			rect(width/2+x * 10 * 2,y*10,20,10);
 			bit = bit - 2;
 			if (bit <= 0){
 				bit = 7;
