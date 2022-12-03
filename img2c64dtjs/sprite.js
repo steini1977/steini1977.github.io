@@ -1,21 +1,24 @@
-let input;
-let img;
-let catchimage = [];let sprite = [];let bit = 7;let scnt = 0;
-let x = 0;let y = 0;let z = 0;
-let rd = 0;let gr = 0;let bl = 0;
-let dt = 0;
-let lum = 0;
-let n = 0;
-let col = 0;
-var typeTexts;
-let cnt=0;
+let input;// file browser for image input
+let img;// image container (jpg)
+let catchimage = []; // array for the sprite
+let sprite = []; // array for the value of sprite pixel
+let bit = 7;// bit counter 
+let scnt = 0;// step variable
+let x = 0;// row
+let y = 0;// coloum
+let z = 0;// counter
+let rd = 0;// pixel read, red value
+let gr = 0;// pixel read, green value
+let bl = 0;// pixel read ,blue value
+let dt = 0;// sprite value
+let lum = 0;// lumency treshold control
 function setup() {  
     var cvs = createCanvas(500, 210); // Create Canvas of given size    
     background(200,200,200); // Set the background color 
-    button = createButton('click me');
-    button.position(cvs.width+10, cvs.height);
+    button = createButton('calculate');// to calculate the jpg-image 
+    button.position(cvs.width+10, cvs.height);// button possision
     button.mousePressed(calcSprite);
-	input = createFileInput(handleFile);
+	input = createFileInput(handleFile);// action 
 	input.position(width, 0);
 }
 function handleFile(file) {
@@ -28,7 +31,9 @@ function handleFile(file) {
   }
 }
 
-function draw() {if (img) {image(img, 0, 0, width/2, height);}}   
+function draw() {
+	if (img) {image(img, 0, 0, width/2, height);}
+	}   
 function calcSprite(){
 		z=0;
 		for(y = 0;y<21;y++){
@@ -38,10 +43,8 @@ function calcSprite(){
 				bl = blue(get(5+x*10,5+y*10));
 				lum = (rd + gr + bl)/3
 				dt=0;n = 0;
-				if (lum < 100){n = 1;}
-				if (lum > 100){n = 0;}
-				if (n == 1){dt=1;}
-				if (n == 0){dt=0;}
+				if (lum < 100){dt = 1;}
+				if (lum > 100){dt = 0;}
 				catchimage[z] = dt;        
 				z+=1;
 			}//end of for(x)
@@ -67,11 +70,12 @@ function calcSprite(){
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
 				
-					if (ncnt < 8){
+					if (ncnt !=8 && y != 21){
 						pout = pout + String(sprite[scnt])+',';
 						hout = hout + hex(sprite[scnt],2)+',';
 						poutR = poutR + String(255-sprite[scnt])+',';
-						houtR = houtR + hex(255+sprite[scnt],2)+',';}
+						houtR = houtR + hex(255+sprite[scnt],2)+',';
+						}
 					if (ncnt == 8 && y< 20){
 						pout = pout + String(sprite[scnt])+'<br>';
 						hout = hout + hex(sprite[scnt],2)+'<br>';
@@ -81,11 +85,6 @@ function calcSprite(){
 						houtR = houtR + hex(255-sprite[scnt],2)+'<br>';
 						poutR = poutR + String(100+y)+' data ';houtR = houtR + 'byte '}
 						scnt = scnt +1;}
-				if (ncnt == 7 && y == 20){
-					pout = pout + String(0);
-					hout = hout + hex(0,2)+'<br>';
-					poutR = poutR + String(0);
-					houtR = houtR + hex(0,2)+'<br>';}
 		z +=1;
 		}//end of for(x)
 		}//end of for(y)

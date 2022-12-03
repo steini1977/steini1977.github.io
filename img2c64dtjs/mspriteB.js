@@ -3,7 +3,7 @@ let img;// image display container.
 
 let catchimage = [];// pixel read.
 let sprite = [];let bit = 7;// sprite cell value. and bit calc variable.
-let scnt = 0;// sprite cell amount.
+let scnt = 0;// sprite cell counter
 let x = 0;let y = 0;let z = 0;// sprite x counter (width) y counter (hight)
 let rd = 0;let gr = 0;let bl = 0;// red pixel value, green pixel value, blue pixel value.
 let dt = 0;//data counter.
@@ -65,7 +65,7 @@ function calcSprite(){
 				if (bit <= 0){bit = 7;
 					ncnt = ncnt + 1;
 					if (ncnt == 1 && y == 0){pout = String(100+y)+ ' data ';}
-					if (ncnt < 8 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
+					if (ncnt !=8 && y != 21 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
 					if (ncnt == 8){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + String(100+y) +' data ';hout = hout + 'byte ';}
 					
 					scnt = scnt +1;
@@ -73,9 +73,9 @@ function calcSprite(){
 				z+=1;
 			}//end of for (x)
 		}//end of for (y)
-        pout = pout + String(0)+'<br>';
+        /*pout = pout + String(0)+'<br>';
 		hout = hout + hex(0,2)+'<br>';
-		stroke(255,255,0);
+		stroke(255,255,0);*/
 		strokeWeight(4);
 		noFill();
 		rect(0,0,240,210);

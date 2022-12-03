@@ -1,14 +1,18 @@
-let input;
-let img;
-let catchimage = [];
-let sprite = [];let bit = 7;
-let scnt = 0;
-let x = 0;let y = 0;let z = 0;
-let rd = 0;let gr = 0;let bl = 0;
-let dt = 0;
-let n = 0;
-let col = 0;
-let cnt=0;
+let input;// browser image chooser (stay to jpg)
+let img;// the image container
+let catchimage = [];// image array
+let sprite = [];// sprite array
+let bit = 7;// bit counter - reverse
+let scnt = 0;// sprite array counter
+let x = 0;// sprite colum 
+let y = 0;// sprite row
+let z = 0;// counter
+let rd = 0;// pixel read, red value
+let gr = 0;// pixel read, green value
+let bl = 0;// pixel read, blue value
+let dt = 0;// data value
+let n = 0;// desision threshold value
+let cnt=0;// sprite array counter
 function setup() {  
     var cvs = createCanvas(240*2, 210); // Create Canvas of given size   
     button = createButton('calculate');
@@ -70,9 +74,8 @@ function calcSprite(){
 			if (bit <= 0){
 				bit = 7;
 				ncnt = ncnt + 1;
-				if (ncnt < 8 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
+				if (ncnt != 8 && y != 21){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
 				if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte ';}
-				if (ncnt == 7 && y == 20){pout = pout + String(0)+'<br>';hout = hout +hex(0,2)+'<br>';ncnt = 0;}
 				scnt = scnt +1;
 			}
 			z +=1;
