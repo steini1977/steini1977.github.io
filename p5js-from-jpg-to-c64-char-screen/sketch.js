@@ -34,6 +34,9 @@ prg = prg + '285 if ch$="n" then poke1024+x+40*y,127<br>'
 prg = prg + '290 if ch$="o" then poke1024+x+40*y,160<br>'
 prg = prg + '295 if ch$="p" then poke1024+x+40*y,32<br>'
 prg = prg + '999 next:next<br>'
+prg = prg + '1000 goto 1000<br>'
+prg = prg + '1 poke 646,1:print chr$(147);<br>'
+prg = prg + '2 poke 53281,0:poke 53280,1<br>' 
   roundCount = 0;
   inp = createFileInput(handleFile);
   inp.position(0, canvas.Height);
