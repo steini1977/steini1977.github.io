@@ -9,10 +9,10 @@ let y = 0;// sprite row
 let z = 0;// counter
 let a = 0;
 let b = 0;
-let rd = 0;// pixel read, red value
-let gr = 0;// pixel read, green value
-let bl = 0;// pixel read, blue value
-let dt = 0;// data value
+let rd = 0.0;// pixel read, red value
+let gr = 0.0;// pixel read, green value
+let bl = 0.0;// pixel read, blue value
+let dt = 0.0;// data value
 let n = 0;// desision threshold value
 let cnt=0;// sprite array counter
 function setup() {  
