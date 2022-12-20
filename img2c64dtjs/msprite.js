@@ -7,6 +7,8 @@ let scnt = 0;// sprite array counter
 let x = 0;// sprite colum 
 let y = 0;// sprite row
 let z = 0;// counter
+let a = 0;
+let b = 0;
 let rd = 0;// pixel read, red value
 let gr = 0;// pixel read, green value
 let bl = 0;// pixel read, blue value
@@ -37,10 +39,12 @@ function draw() {if (img) {image(img, 0, 0, width/2,height)};}
 function calcSprite(){
 	z=0;
 	for(y = 0;y<21;y++){// sprite y color picker vector
-	 for(x = 0;x<12;x++){// sprite x color picker vector			
-		rd =   red(get(10+(10*2)*x,5+(10*y)));
-		gr = green(get(10+(10*2)*x,5+(10*y)));
-		bl =  blue(get(10+(10*2)*x,5+(10*y)));
+	 for(x = 0;x<12;x++){// sprite x color picker vector	
+		 for(b=1;b<9;b++){
+			 for(a=1;a<19;a++){
+		rd =   red(get(a+x*20,b+y*10));
+		gr = green(get(a+x*20,b+y*10));
+		bl =  blue(get(a+x*20,b+y*10));
 		n = 0;dt=0
 		if (rd>64){n = n + pow(2,0);}
 		if (gr>127){n = n + pow(2,1);}
