@@ -9,9 +9,9 @@ let y = 0;// sprite row
 let z = 0;// counter
 let a = 0;
 let b = 0;
-let rd = 0.0;// pixel read, red value
-let gr = 0.0;// pixel read, green value
-let bl = 0.0;// pixel read, blue value
+let rd = 0;// pixel read, red value
+let gr = 0;// pixel read, green value
+let bl = 0;// pixel read, blue value
 let dt = 0;// data value
 let n = 0;// desision threshold value
 let cnt=0;// sprite array counter
@@ -40,15 +40,11 @@ function calcSprite(){
 	z=0;
 	for(y = 0;y<21;y++){// sprite y color picker vector
 	 for(x = 0;x<12;x++){// sprite x color picker vector	
-		 for(b=1;b<9;b++){
-			 for(a=1;a<19;a++){
-		rd =   red(get(a+x*20,b+y*10));
-		gr = green(get(a+x*20,b+y*10));
-		bl =  blue(get(a+x*20,b+y*10));
-			 }}
-		 rd=rd*0.00584795321637426900584795321637;
-		 gr=gr*0.00584795321637426900584795321637;
-		 bl=bl*0.00584795321637426900584795321637;
+	
+		rd =   red(get(10+x*20,5+y*10));
+		gr = green(get(10+x*20,5+y*10));
+		bl =  blue(get(10+x*20,5+y*10));
+	
 		n = 0;dt=0
 		if (rd>64){n = n + pow(2,0);}
 		if (gr>127){n = n + pow(2,1);}
