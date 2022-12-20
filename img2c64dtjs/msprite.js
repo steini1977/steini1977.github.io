@@ -45,6 +45,10 @@ function calcSprite(){
 		rd =   red(get(a+x*20,b+y*10));
 		gr = green(get(a+x*20,b+y*10));
 		bl =  blue(get(a+x*20,b+y*10));
+			 }}
+		 rd=rd/171;
+		 gr=gr/171:
+		 bl=bl/171;
 		n = 0;dt=0
 		if (rd>64){n = n + pow(2,0);}
 		if (gr>127){n = n + pow(2,1);}
