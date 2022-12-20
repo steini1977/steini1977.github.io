@@ -24,7 +24,7 @@ function setup() {
 	input = createFileInput(handleFile);
 	input.position(width+10, +40);
 
-1}
+}
 function handleFile(file) {
   print(file);
   if (file.type === 'image') {
