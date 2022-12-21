@@ -55,8 +55,8 @@ function calcSprite(){
 		if (n == 3){dt=1;}
 		if (n == 5){dt=2;}
 		if (n == 6){dt=3;}
-		if (n == 0){dt=3;}
-		if (n == 7){dt=0;}
+		if (n == 0){dt=0;}
+		if (n == 7){dt=3;}
 		catchimage[z] = dt;z+=1;
 		}
 	}	
