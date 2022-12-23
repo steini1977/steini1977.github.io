@@ -46,9 +46,9 @@ function calcSprite(){
 		bl =  blue(get(10+x*20,5+y*10));
 	
 		n = 0;dt=0
-		if (rd>32){n = n + pow(2,0);}
-		if (gr>32){n = n + pow(2,1);}
-		if (bl>32){n = n + pow(2,2);}			
+		if (rd>63){n = n + pow(2,0);}
+		if (gr>63){n = n + pow(2,1);}
+		if (bl>63){n = n + pow(2,2);}			
 		if (n == 1){dt=1;}
 		if (n == 2){dt=2;}
 		if (n == 4){dt=3;}
