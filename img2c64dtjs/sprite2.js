@@ -88,7 +88,7 @@ function calcSprite(){
 						pout = pout + String(sprite[scnt])+'<br>';
 						hout = hout + hex(sprite[scnt],2)+'<br>';
 
-						ncnt = 0;pout = pout + String(100+y)+'';
+						ncnt = 0;pout = pout + '';
 						hout = hout + 'byte '
 
 						poutR = poutR + String(255-sprite[scnt])+'<br>';
