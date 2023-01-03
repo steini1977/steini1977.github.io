@@ -36,10 +36,11 @@ function calcSprite(){
 				gr= green(get(10+(10*2)*x,5+(10*y)));//read rgb, get green value
 				bl = blue(get(10+(10*2)*x,5+(10*y)));//read rgb, get blue value
 				c = (rd+gr+bl)/3;// make it to croma value
-				dt=0;n = 3;//data and n as a choise picker
-				if (c>32 & c<65){n = 1;}
-				if (c>64 & c<98){n =2;}
-				if (c>130) {n = 0;}
+				dt=0;n = 0;//data and n as a choise picker
+                                if (c<48){n = 0;}
+				if (c>47 & c<94){n = 1;}
+				if (c>93 & c<141){n =2;}
+				if (c>142) {n = 4;}
 				if (n == pow(2,0)){dt=1;}
 				if (n == pow(2,1)){dt=2;}
 				if (n == pow(2,2)){dt=3;}
