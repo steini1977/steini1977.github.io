@@ -33,7 +33,7 @@ function calcSprite(){
 		for(y = 0;y<23;y++){
 			for(x = 0;x<24;x+=1){			
 			pout=pout+String(floor(brightness(get(5+x*10,5+y*10))*0.07)+1);				
-			if(x < 23){pout = pout + '&#09'}
+			if(x < 23){pout = pout + '&#09 '}
 			if(x == 23){pout = pout + '<br>'}
 			
 			}//end of for(x)
