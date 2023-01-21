@@ -65,7 +65,7 @@ function calcSprite(){
 	bit = 7;
 	ncnt = 0;
 	dcnt = 100;                  //#2  
-	pout = String(Lcnt)+' data '; //#1
+	pout = String(dcnt)+' data '; //#1
 	hout = 'byte ';
     z=0;
     for (y = 0;y<21;y+=1){
