@@ -64,7 +64,7 @@ function calcSprite(){
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
-	Lcnt = 100;                  //#2  
+	dcnt = 100;                  //#2  
 	pout = String(Lcnt)+' data '; //#1
 	hout = 'byte ';
     z=0;
@@ -84,8 +84,8 @@ function calcSprite(){
 					pout = pout + String(sprite[scnt])+'<br>';
 					hout = hout + hex(sprite[scnt],2)+'<br>';
 					ncnt = 0;
-					Lcnt += 1; //#3
-					pout = pout + String(Lcnt) + 'data ';hout = hout + 'byte ';} //#4
+					dcnt += 1; //#3
+					pout = pout + String(dcnt) + 'data ';hout = hout + 'byte ';} //#4
 				scnt = scnt +1;
 			}
 			z +=1;
