@@ -25,5 +25,14 @@
 				<td><p id="dumpR2">Hex will show/Anzeige</p></td>
 			</tr>
 		</table>
+		
+<p>
+300 for n=0 to 63+64:read dt<BR>
+305 poke 832+n,dt:next<br>
+310 poke 53248+0,100<br>
+315 poke 53248+1,100<br>
+320 poke 53248+21,1<br>
+325 poke 2040,13<br>
+</p>
 	</body>
 </html>

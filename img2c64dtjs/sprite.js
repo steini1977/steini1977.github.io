@@ -49,13 +49,13 @@ function calcSprite(){
 				z+=1;
 			}//end of for(x)
 		}//end of for (y)
-		for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
+		for (scnt = 0;scnt<64;scnt+=1){sprite[scnt] = 0;}
 		scnt = 0;
 		bit = 7;
 		ncnt = 0;
 		pout = String(100+scnt)+' data '; 		
 		hout = 'byte ';
-		poutR = String(100+scnt)+' data ';
+		poutR = String(200+scnt)+' data ';
 		houtR ='byte ';
 		z=0;
 		img = null;
@@ -70,7 +70,7 @@ function calcSprite(){
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
 			
-                         if (ncnt !=8 && y != 21){
+                         if (ncnt !=8 /*&& y != 21*/){
 						pout = pout + String(sprite[scnt])+',';
 						hout = hout + hex(sprite[scnt],2)+',';
 						poutR = poutR + String(255-sprite[scnt])+',';
@@ -83,11 +83,16 @@ function calcSprite(){
 						hout = hout + 'byte '
 						poutR = poutR + String(255-sprite[scnt])+'<br>';
 						houtR = houtR + hex(255-sprite[scnt],2)+'<br>';
-						poutR = poutR + String(100+y)+' data ';houtR = houtR + 'byte '}
+						poutR = poutR + String(200+y)+' data ';houtR = houtR + 'byte '}
 						scnt = scnt +1;}
 		z +=1;
 		}//end of for(x)
 		}//end of for(y)
+		pout = pout + ",0"
+	    hout = hout + hex(0,2);
+		poutR = poutR + ",0";
+		houtR = houtR + hex(0,2);
+		
 		pout = pout + '.';hout = hout + '.'
 		poutR = poutR +'.';houtR = houtR +'.'
 		pout = splitTokens(pout,',.');hout = splitTokens(hout,',.')
