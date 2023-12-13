@@ -43,8 +43,8 @@ function calcSprite(){
 				bl = blue(get(5+x*10,5+y*10));
 				lum = (rd + gr + bl)/3
 				dt=0;n = 0;
-				if (lum < 142){dt = 1;}
-				if (lum > 141){dt = 0;}
+				if (lum < 92){dt = 1;}
+				if (lum > 91){dt = 0;}
 				catchimage[z] = dt;        
 				z+=1;
 			}//end of for(x)
@@ -74,7 +74,7 @@ function calcSprite(){
 						pout = pout + String(sprite[scnt])+',';
 						hout = hout + hex(sprite[scnt],2)+',';
 						poutR = poutR + String(255-sprite[scnt])+',';
-						houtR = houtR + hex(255+sprite[scnt],2)+',';
+						houtR = houtR + hex(255-sprite[scnt],2)+',';
 						}
 					if (ncnt == 8 && y< 20){
 						pout = pout + String(sprite[scnt])+'<br>';
