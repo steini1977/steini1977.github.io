@@ -47,9 +47,9 @@ function calcSprite(){
 		bl =  blue(get(10+x*20,5+y*10));
 	
 		n = 0;dt=0:test=false;
-		if (rd>128 && test == false){n = pow(2,0);test=true;}
-		if (gr>128 && test == false){n = pow(2,1);}test=true;}
-		if (bl>128 && test == false){n = pow(2,2);test=true;}			
+		if (rd>128 & test == false){n = pow(2,0);test=true;}
+		if (gr>128 & test == false){n = pow(2,1);}test=true;}
+		if (bl>128 & test == false){n = pow(2,2);test=true;}			
 		if (n == 1){dt=1;}
 		if (n == 2){dt=2;}
 		if (n == 4){dt=3;}
