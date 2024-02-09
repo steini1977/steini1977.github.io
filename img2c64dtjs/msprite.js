@@ -15,6 +15,7 @@ let bl = 0;// pixel read, blue value
 let dt = 0;// data value
 let n = 0;// desision threshold value
 let cnt=0;// sprite array counter
+let test=false;
 function setup() {  
     var cvs = createCanvas(240*2, 210); // Create Canvas of given size   
     button = createButton('calculate');
@@ -45,10 +46,10 @@ function calcSprite(){
 		gr = green(get(10+x*20,5+y*10));
 		bl =  blue(get(10+x*20,5+y*10));
 	
-		n = 0;dt=0
-		if (rd>128){n = pow(2,0);}
-		if (gr>128{n = pow(2,1);}
-		if (bl>128){n = pow(2,2);}			
+		n = 0;dt=0:test=false;
+		if (rd>128 && test == false){n = pow(2,0);test=true;}
+		if (gr>128 && test == false){n = pow(2,1);}test=true;}
+		if (bl>128 && test == false){n = pow(2,2);test=true;}			
 		if (n == 1){dt=1;}
 		if (n == 2){dt=2;}
 		if (n == 4){dt=3;}
