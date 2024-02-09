@@ -52,12 +52,7 @@ function calcSprite(){
 		if (bl>128 & test == false){n = n + pow(2,2);test = true;}			
 		if (n == 1){dt=1;}
 		if (n == 2){dt=2;}
-		if (n == 4){dt=3;}
-		if (n == 3){dt=1;}
-		if (n == 5){dt=2;}
-		if (n == 6){dt=3;}
-		if (n == 0){dt=0;}
-		if (n == 7){dt=3;}
+		if (n == 4){dt=3;}		
 		catchimage[z] = dt;z+=1;
 		}
 	}	
@@ -86,6 +81,8 @@ function calcSprite(){
 			z +=1;
 		}			  		
 	}
+	pout = pout + String(0);
+	hout = hout + hex(0,2);
 	stroke(255,255,0);
 	strokeWeight(4);
 	noFill();
