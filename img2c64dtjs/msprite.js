@@ -15,7 +15,7 @@ let bl = 0;// pixel read, blue value
 let dt = 0;// data value
 let n = 0;// desision threshold value
 let cnt=0;// sprite array counter
-let test=false;
+let test = false;
 function setup() {  
     var cvs = createCanvas(240*2, 210); // Create Canvas of given size   
     button = createButton('calculate');
@@ -46,14 +46,18 @@ function calcSprite(){
 		gr = green(get(10+x*20,5+y*10));
 		bl =  blue(get(10+x*20,5+y*10));
 	
-		n = 0;dt=0:test=false;
-		if (rd>128 & test == false){n = pow(2,0);test=true;}
-		if (gr>128 & test == false){n = pow(2,1);}test=true;}
-		if (bl>128 & test == false){n = pow(2,2);test=true;}			
+		n = 0;dt=0;test = false;
+		if (rd>128 & test == false){n = n + pow(2,0);test = true;}
+		if (gr>128 & test == false){n = n + pow(2,1);test = true;}
+		if (bl>128 & test == false){n = n + pow(2,2);test = true;}			
 		if (n == 1){dt=1;}
 		if (n == 2){dt=2;}
 		if (n == 4){dt=3;}
-		
+		if (n == 3){dt=1;}
+		if (n == 5){dt=2;}
+		if (n == 6){dt=3;}
+		if (n == 0){dt=0;}
+		if (n == 7){dt=3;}
 		catchimage[z] = dt;z+=1;
 		}
 	}	
@@ -61,8 +65,7 @@ function calcSprite(){
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
-	dcnt = 100;                  //#2  
-	pout = String(dcnt)+' data '; //#1
+	pout = 'data ';
 	hout = 'byte ';
     z=0;
     for (y = 0;y<21;y+=1){
@@ -77,12 +80,7 @@ function calcSprite(){
 				bit = 7;
 				ncnt = ncnt + 1;
 				if (ncnt != 8 && y != 21){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
-				if (ncnt == 8 && y < 20){
-					pout = pout + String(sprite[scnt])+'<br>';
-					hout = hout + hex(sprite[scnt],2)+'<br>';
-					ncnt = 0;
-					dcnt += 1; //#3
-					pout = pout + String(dcnt) + 'data ';hout = hout + 'byte ';} //#4
+				if (ncnt == 8 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + 'data ';hout = hout + 'byte ';}
 				scnt = scnt +1;
 			}
 			z +=1;
