@@ -13,7 +13,7 @@ let bl = 0;// pixel read ,blue value
 let dt = 0;// sprite value
 let lum = 0;// lumency treshold control
 function setup() {  
-    var cvs = createCanvas(500, 210); // Create Canvas of given size    
+    var cvs = createCanvas(480, 210); // Create Canvas of given size    
     background(200,200,200); // Set the background color 
     button = createButton('calculate');// to calculate the jpg-image 
     button.position(cvs.width+10, cvs.height);// button possision
@@ -66,7 +66,7 @@ function calcSprite(){
 				rect(x * 10,y*10,10,10);
 				if(catchimage[z] == 1){stroke(255,255,255);fill(255,255,255);}
 				if(catchimage[z] == 0){stroke(0,0,0);fill(0,0,0);} 	  
-				rect(25*10+x * 10,y*10,10,10);
+				rect(24*10+x * 10,y*10,10,10);
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
 			
