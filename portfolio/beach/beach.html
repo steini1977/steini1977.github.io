@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nb" style="background-color:rgb(60, 60, 60);"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div style="width:100%;">
+  <div style="float:left; width:80%">
+       <div style="height:50%; border:1px solid #000000;">
+	   Viewer
+	   <div class="container" style="display: block;">		
+		<img id="expandedImg" style="width:100%" src="beach-1.jpg">
+		<div id="imgtext"></div>
+		</div>
+	   </div>
+       
+  </div>
+ <div style="float:right; width:10%; height:100%; overflow:auto;">
+   <h1>Beach<br>2023<br>april</h1>
+   <p><img src="beach-1.jpg" alt="" style="width:50%" onclick="myFunction(this);"></p>
+   <p><img src="beach-2.jpg" alt="" style="width:50%" onclick="myFunction(this);"></p>
+   <p><img src="beach-3.jpg" alt="" style="width:50%" onclick="myFunction(this);"></p>
+     </div>
+</div>
+</body>
+</html>
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
