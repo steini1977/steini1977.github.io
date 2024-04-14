@@ -63,8 +63,8 @@ function draw() {
     stroke(255,255,255);           
     image(img, 0, 0, width, height);   
     for(let y = 0;y < 25;y+=1){
-      pout = pout + String(y+100)+'data ' + char(34)
-      cout = cout + String(y+130)+'data ' + char(34)
+      pout = pout + String(y+100)+'print ' + char(34)
+      cout = cout + String(y+130)+'print ' + char(34)
       for(let x = 0;x < 40;x+=1){     
       noFill();rect(x*(width/40),y*(height/25),width/40,height/25);
       dice[0]=get(x*(width/40)+width/40/6*2,y*(height/25)+height/25/6*2);
