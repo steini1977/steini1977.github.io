@@ -156,8 +156,8 @@ function draw() {
         rect(x*(width/40),y*(height/25),width/40,height/25); 
       }
     }
-    pout = pout + char(34)+'<br>';
-    cout = cout + char(34)+'<br>';
+    pout = pout + char(34)+';<br>';
+    cout = cout + char(34)+';<br>';
   }  
   document.getElementById("dump").innerHTML = pout+cout+prg+'<br>';   
   }
