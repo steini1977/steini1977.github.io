@@ -1,8 +1,8 @@
 function setup(){ 
  createCanvas(400, 400);
   background(127);
-  let d = '1';// str(day());
-  let m = '5';//str(month());
+  let d = str(day());
+  let m = str(month());
   print(d);
   print(d.length);
   if (d.length < 2) d = concat("0", d);
