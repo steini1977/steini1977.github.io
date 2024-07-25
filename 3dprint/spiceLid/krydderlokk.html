@@ -1,0 +1,86 @@
+<html  lang="nb">
+<html>
+<head>
+<title>overskrift</title>
+<style>
+.grid-containerA {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: 1px;
+  background-color: white;<!-- #2196F3; --!>
+  padding: 3px;
+}
+.grid-containerB {
+  display: grid;
+  grid-template-columns: auto 50%;
+  gap: 1px;
+  background-color: white;<!-- #2196F3; --!>
+  padding: 3px;
+}
+
+.grid-containerA >div {
+  background-color: rgba(0,0, 0, 1);
+  border: 1px solid white;
+  text-align: left;
+  font-size: 30px;
+    padding: 20px;	
+}
+.grid-containerB >div {
+  background-color: rgba(0,0, 0, 1);
+  border: 1px solid white;
+  text-align: left;
+  font-size: 30px;
+    padding: 20px;	
+}
+
+
+</style>
+</head>
+<body bgcolor="black" text="white">
+<h1>krydderlokk til gjenbruk av duftelys-glass</h1
+<p>dette lokket er designet for ikea duftelys. artikkel nr 105.023.79 "Adlad natur og fritrom"</p>
+<div class="grid-containerA">
+  <div style ="text-align:center;"><a href="CFH_1.jpg"><img src="CFH_1.jpg" width="50%"></a><br><br><a href="CFH_2.jpg"><img src="CFH_2.jpg" width="50%"></a></div><div >Første utkast var dimensjonert feil av meg. topp og bunn<br>Jeg stoppa printen for å spare filement</div>
+  <div style ="text-align:left;">Neste eksemplar var for hard til å presse ned </div><div><a href="CFH_3.jpg"><img src="CFH_3.jpg" width="50%"></a></div>
+  <div style ="text-align:left;"><a href="CFH_4.jpg"><img src="CFH_4.jpg" width="50%"></a><br><br><a href="CFH_9.jpg"><img src="CFH_9.jpg" width="50%"></a><br><br><a href="CFH_10.jpg"><img src="CFH_10.jpg" width="50%"></a></div><div >Jeg endret designen til en "skyv-på" vesjon<br>men den var for tykk.. men lokket bulet, og slapp ut sukker-korn.<br>Endret igjen.. da passa den</div>
+  </div>
+  <div class="grid-containerB">
+    <div style ="text-align:left;">Da er det bare å pusse toppen fin </div><div ><a href="CFH_14.jpg"><img src="CFH_14.jpg" width="50%"></a></div>
+	<div style ="text-align:left;">Her er dufteglasset på siden.</div><div ><a href="CFH_16.jpg"><img src="CFH_16.jpg" width="50%"></a></div>
+  </div>
+  <p>
+  Her er openscad koden:
+  <pre>
+  //spice3.scad
+$fn=96*5;
+translate([0,0,12.7])rotate([0,180,0])
+intersection(){
+union(){
+difference(){
+    union(){
+        translate([0,0,+3])cylinder(d=60,h=9.5);
+    }
+    union(){
+        hull(){
+            translate([-20,0,0])translate([0,0,4.80])cylinder(d=50.50,h=5,center=false);
+            translate([20,0,0])translate([0,0,4.80])cylinder(d=50.50,h=5,center=false);
+            }
+        hull(){
+            translate([-20,0,0])translate([0,0,0])cylinder(d=48.00,h=4.81,center=false);    
+            translate([20,0,0])translate([0,0,0])cylinder(d=48.00,h=4.81,center=false);
+            }
+        }
+}
+}
+union(){
+translate([15,-25,0])cylinder(d=3.7,h=13,$fn=98);
+translate([15,25,0])cylinder(d=3.7,h=13,$fn=98);
+translate([-15,-25,0])cylinder(d=3.7,h=13,$fn=98);
+translate([-15,25,0])cylinder(d=3.7,h=13,$fn=98);
+translate([0,0,7])cube([32.8,60,13],center=true);
+translate([0,0,11])cube([60.8,60,8],center=true);
+}
+}
+</pre>
+</body>
+</html>
