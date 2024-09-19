@@ -38,9 +38,9 @@ function calcSprite(){
 		z=0;
 		for(y = 0;y<21;y++){
 			for(x = 0;x<24;x+=1){			
-				rd = red(get(5+x*10,5+y*10));
-				gr= green(get(5+x*10,5+y*10));
-				bl = blue(get(5+x*10,5+y*10));
+				rd = red(get(5+(x*10),5+y*10));
+				gr= green(get(5+(x*10),5+y*10));
+				bl = blue(get(5+(x*10),5+y*10));
 				lum = (rd + gr + bl)/3
 				dt=0;n = 0;
 				if (lum < 92){dt = 1;}
