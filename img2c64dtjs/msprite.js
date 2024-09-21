@@ -60,9 +60,9 @@ function calcSprite(){
 	for(y = 0;y<21;y++){// sprite y color picker vector
 	 for(x = 0;x<12;x++){// sprite x color picker vector	
 	
-		rd =   red(get(10+x*20,5+y*10));
-		gr = green(get(10+x*20,5+y*10));
-		bl =  blue(get(10+x*20,5+y*10));
+		rd =   red(get(10+(x*20),5+y*10));
+		gr = green(get(10+(x*20),5+y*10));
+		bl =  blue(get(10+(x*20),5+y*10));
 	         ard = ard + rd;
 		 agr = agr + gr;
 		 abl = abl + bl;
@@ -77,9 +77,9 @@ function calcSprite(){
 	for(y = 0;y<21;y++){// sprite y color picker vector
 	 for(x = 0;x<12;x++){// sprite x color picker vector	
 	
-		rd =   red(get(10+x*20,5+y*10));
-		gr = green(get(10+x*20,5+y*10));
-		bl =  blue(get(10+x*20,5+y*10));
+		rd =   red(get(10+(x*20),5+y*10));
+		gr = green(get(10+(x*20),5+y*10));
+		bl =  blue(get(10+(x*20),5+y*10));
 	
 		n = 0;dt=0;test = false;
 		if (rd>ard & test == false){n = n + pow(2,0);test = true;}
