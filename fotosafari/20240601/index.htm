@@ -1,0 +1,117 @@
+<!DOCTYPE html >
+<html lang="nb">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background:black ;
+  margin: 0;
+  font-family: Arial; color:white;
+  }
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 8.33%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  font-weight: bold;
+  background:  white;
+ }
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>fotosafari i sandnes</h2>
+  <p>logg-dato:1 juni 2024.</p>
+  <p>Bare å klikke på bildene. Der er også desimal-kordinater hvor jeg stod.</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+    <div class="column"><!-- photo 1-->
+        <img src="s1.jpg" title="&quotLava&quot" alt="58.854834, 5.739010" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column"><!-- photo 2-->
+        <img src="s2.jpg" alt="58.856161, 5.740618" title="&quotMystisk&quot bygg." style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column"><!-- photo 3-->
+        <img src="s3.jpg" alt="58.856161, 5.740618" title="morse kode?" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column"><!-- photo 4-->
+        <img src="s4.jpg" alt="58.856894, 5.741524" title="" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column"><!-- photo 5-->
+        <img src="s5.jpg" alt="58.856161, 5.740618" title="" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column"><!-- photo 6-->
+        <img src="s6.jpg" alt="58.856161, 5.740618" title="" style="width:100%" onclick="myFunction(this);">
+    </div>
+
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
+</html>
