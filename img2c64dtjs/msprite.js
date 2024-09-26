@@ -95,7 +95,7 @@ function calcSprite(){
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
-	pout =String(100+scnt)+' data ';
+	pout ='data ';
 	hout = 'byte ';
     z=0;
     for (y = 0;y<21;y+=1){
