@@ -22,7 +22,7 @@ function setup() {
     button = createButton('calculate');
     button.position(cvs.width+20, cvs.height);
     button.mousePressed(calcSprite);
-    background(200,200,200); // Set the background color         
+    background(0,0,0); // Set the background color         
 	input = createFileInput(handleFile);
 	input.position(width+10, +40);
 
