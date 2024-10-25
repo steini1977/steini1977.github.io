@@ -65,7 +65,7 @@ function draw() {
       if (SumRed > 100 && SumGreen < 101 && SumBlue < 101){CharCol=[200,0,0];cout = cout + '<font color="red"> *</font>'}
       if (SumRed < 101 && SumGreen > 100 && SumBlue < 101){CharCol=[0,200,0];cout = cout + '<font color="green"> *</font>'}
       if (SumRed < 101 && SumGreen < 101 && SumBlue > 100){CharCol=[0,0,200];cout = cout + '<font color="blue"> *</font>'}
-      if (SumRed > 100 && SumGreen > 100 && SumBlue < 101){CharCol=[200,200,0];cout = cout + '<font color="pink"> *</font>'}
+      if (SumRed > 100 && SumGreen > 100 && SumBlue < 101){CharCol=[200,200,0];cout = cout + '<font color="yellow"> *</font>'}
       if (SumRed > 100 && SumGreen < 101 && SumBlue > 100){CharCol=[200,0,200];cout = cout + '<font color="orange"> *</font>'}
       if (SumRed < 101 && SumGreen > 100 && SumBlue > 100){CharCol=[0,200,200];cout = cout + '<font color="cyan"> *</font>'}
       if (SumRed > 100 && SumGreen > 100 && SumBlue > 100){CharCol=[200,200,200];cout = cout + '<font color="grey"> *</font>'}
