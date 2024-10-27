@@ -54,26 +54,8 @@ function draw() {if (img) {image(img, 0, 0, width/2,height)};}
 
 function calcSprite(){
 	z=0;
-	ard = 0;
-        agr = 0;
-        abl = 0;
-	for(y = 0;y<21;y++){// sprite y color picker vector
-	 for(x = 0;x<12;x++){// sprite x color picker vector	
 	
-		rd =   red(get(10+(x*20),5+y*10));
-		gr = green(get(10+(x*20),5+y*10));
-		bl =  blue(get(10+(x*20),5+y*10));
-	         ard = ard + rd;
-		 agr = agr + gr;
-		 abl = abl + bl;
-		 
 
-		 
-		}
-	}	
-	ard = ard / 504;
-	agr = agr / 504;
-	abl = abl / 504;
 	for(y = 0;y<21;y++){// sprite y color picker vector
 	 for(x = 0;x<12;x++){// sprite x color picker vector	
 	
@@ -82,9 +64,9 @@ function calcSprite(){
 		bl =  blue(get(10+(x*20),5+y*10));
 	
 		n = 0;dt=0;test = false;
-		if (rd>ard & test == false){n = n + pow(2,0);test = true;}
-		if (gr>agr & test == false){n = n + pow(2,1);test = true;}
-		if (bl>abl & test == false){n = n + pow(2,2);test = true;}			
+		if (rd>128 & test == false){n = n + pow(2,0);test = true;}
+		if (gr>128 & test == false){n = n + pow(2,1);test = true;}
+		if (bl>128 & test == false){n = n + pow(2,2);test = true;}			
 		if (n == 1){dt=1;}
 		if (n == 2){dt=2;}
 		if (n == 4){dt=3;}		
