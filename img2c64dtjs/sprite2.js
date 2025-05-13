@@ -43,8 +43,8 @@ function calcSprite(){
 				bl = blue(get(5+x*10,5+y*10));
 				lum = (rd + gr + bl)/3
 				dt=0;n = 0;
-				if (lum < 92){dt = 1;}
-				if (lum > 91){dt = 0;}
+				if (lum < 128){dt = 1;}
+				if (lum > 127){dt = 0;}
 				catchimage[z] = dt;        
 				z+=1;
 			}//end of for(x)
