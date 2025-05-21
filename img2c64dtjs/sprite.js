@@ -70,13 +70,13 @@ function calcSprite(){
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
 			
-                         if (ncnt !=8 /*&& y != 21*/){
+                         if (ncnt !=9 /*&& y != 21*/){
 						pout = pout + String(sprite[scnt])+',';
 						hout = hout + hex(sprite[scnt],2)+',';
 						poutR = poutR + String(255-sprite[scnt])+',';
 						houtR = houtR + hex(255-sprite[scnt],2)+',';
 						}
-					if (ncnt == 8 && y< 20){
+					if (ncnt == 9 && y< 20){
 						pout = pout + String(sprite[scnt])+'<br>';
 						hout = hout + hex(sprite[scnt],2)+'<br>';
 						ncnt = 0;pout = pout + String(100+y)+' data ';
@@ -88,11 +88,6 @@ function calcSprite(){
 		z +=1;
 		}//end of for(x)
 		}//end of for(y)
-		pout = pout + ",0"
-	    hout = hout + hex(0,2);
-		poutR = poutR + ",0";
-		houtR = houtR + hex(0,2);
-		
 		pout = pout + '.';hout = hout + '.'
 		poutR = poutR +'.';houtR = houtR +'.'
 		pout = splitTokens(pout,',.');hout = splitTokens(hout,',.')
