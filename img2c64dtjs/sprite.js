@@ -3,6 +3,7 @@ let img;// image container (jpg)
 let catchimage = []; // array for the sprite
 let sprite = []; // array for the value of sprite pixel
 let bit = 7;// bit counter 
+let lc = 0;// data-line counter
 let scnt = 0;// step variable
 let x = 0;// row
 let y = 0;// coloum
@@ -70,20 +71,22 @@ function calcSprite(){
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
 			
-                         if (ncnt !=8 && y != 21*/){
+                         if (ncnt !=7 && y != 21){
 						pout = pout + String(sprite[scnt])+',';
 						hout = hout + hex(sprite[scnt],2)+',';
 						poutR = poutR + String(255-sprite[scnt])+',';
 						houtR = houtR + hex(255-sprite[scnt],2)+',';
 						}
-					if (ncnt == 8 && y< 20){
+					if (ncnt == 7 && y< 20){
 						pout = pout + String(sprite[scnt])+'<br>';
 						hout = hout + hex(sprite[scnt],2)+'<br>';
-						ncnt = 0;pout = pout + String(100+y)+' data ';
+						ncnt = 0;pout = pout + String(100+lc)+' data ';
 						hout = hout + 'byte '
 						poutR = poutR + String(255-sprite[scnt])+'<br>';
 						houtR = houtR + hex(255-sprite[scnt],2)+'<br>';
-						poutR = poutR + String(200+y)+' data ';houtR = houtR + 'byte '}
+						poutR = poutR + String(100+lc+100)+' data ';houtR = houtR + 'byte '
+					       lc +=1;
+					}
 						scnt = scnt +1;}
 		z +=1;
 		}//end of for(x)
