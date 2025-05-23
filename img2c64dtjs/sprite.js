@@ -70,7 +70,7 @@ function calcSprite(){
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
 			
-                         if (ncnt !=9 /*&& y != 21*/){
+                         if (ncnt !=9 && y != 21*/){
 						pout = pout + String(sprite[scnt])+',';
 						hout = hout + hex(sprite[scnt],2)+',';
 						poutR = poutR + String(255-sprite[scnt])+',';
