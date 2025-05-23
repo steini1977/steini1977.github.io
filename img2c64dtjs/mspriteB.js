@@ -66,8 +66,8 @@ function calcSprite(){
 				if (bit <= 0){bit = 7;
 					ncnt = ncnt + 1;
 					if (ncnt == 1 && y == 0){pout = String(100+y)+ ' data ';}
-					if (ncnt !=8 && y != 21 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
-					if (ncnt == 8){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + String(100+y) +' data ';hout = hout + 'byte ';}
+					if (ncnt !=9 && y != 21 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
+					if (ncnt ==9){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + String(100+y) +' data ';hout = hout + 'byte ';}
 					
 					scnt = scnt +1;
 				}//end of if bit
