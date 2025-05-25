@@ -52,8 +52,9 @@ function calcSprite(){
 		scnt = 0;// sprite index number
 		bit = 7;// a way to make a byte of bits
 		ncnt = 0;
-		pout = 'data ';
+		pout = '100 data ';
 		hout = 'byte ';
+		lcnt = 101
 		z=0;
 		for (y = 0;y<21;y++){
 			for (x = 0;x<12;x++){
@@ -65,9 +66,9 @@ function calcSprite(){
 				bit = bit - 2;
 				if (bit <= 0){bit = 7;
 					ncnt = ncnt + 1;
-					if (ncnt == 1 && y == 0){pout = String(100+y)+ ' data ';}
+					if (ncnt == 1 && y == 0){pout = String(lcnt)+ ' data ';}
 					if (ncnt !=9 && y != 21 ){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
-					if (ncnt ==9){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + String(100+y) +' data ';hout = hout + 'byte ';}
+					if (ncnt ==9){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + String(lcnt) +' data ';hout = hout + 'byte ';lcnt +=1;}
 					
 					scnt = scnt +1;
 				}//end of if bit
