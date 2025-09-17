@@ -1,12 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 236.2">
-  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
-  <defs>
-    <style>
-      .st0 {
-        isolation: isolate;
-      }
-    </style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="176.94499mm"
+   height="154.73877mm"
+   viewBox="0 0 176.94499 154.73877"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="spook2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.71891835"
+     inkscape:cx="326.18447"
+     inkscape:cy="366.52285"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
   </defs>
-  <image class="st0" width="383" height="313" transform="scale(.7)" xlink:href="spook2-1.png"/>
+  <g
+     inkscape:label="Lag 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-18.727879,-51.396885)">
+    <rect
+       style="fill:#ffffff;stroke-width:1.5"
+       id="rect1"
+       width="178.86244"
+       height="154.57249"
+       x="16.88773"
+       y="51.028854" />
+    <path
+       style="fill:#000000"
+       d="m 62.787887,202.61085 v -3.5248 H 47.983724 33.179561 v -3.70104 -3.70104 H 25.95372 18.727879 v -11.10312 -11.10313 h 3.5248 3.524801 v -3.70104 -3.70104 h 3.701041 3.70104 v -14.80416 -14.80417 h 3.701041 3.701041 v -3.70104 -3.70104 h 14.804162 14.804163 v -3.70104 -3.70104 h -7.402081 -7.402082 v -3.70105 -3.70104 H 44.282683 33.179561 v -7.40208 -7.402081 H 29.478521 25.77748 V 84.353775 73.250652 h 3.701041 3.70104 V 69.549611 65.84857 h 11.103122 11.103122 v -3.701042 -3.701041 h 11.103122 11.103122 v -3.524801 -3.524801 h 33.309371 33.30936 v 3.524801 3.524801 h 11.10312 11.10313 v 3.701041 3.701042 h 3.70104 3.70104 v 3.701041 3.701041 h 7.40208 7.40208 v 14.804165 14.804163 h -11.10312 -11.10312 v 7.40208 7.40209 h -7.40209 -7.40208 v 3.70104 3.70104 h 7.40208 7.40209 v 3.70104 3.70104 h 3.70104 3.70104 v 11.10312 11.10313 h 7.40208 7.40208 v 7.40208 7.40208 h 3.5248 3.5248 v 3.70104 3.70105 h -3.5248 -3.5248 v 7.40208 7.40208 h -11.10312 -11.10312 v 3.70104 3.70104 h -7.40209 -7.40208 v 3.5248 3.5248 H 107.20037 62.787887 Z m 66.618733,-62.74146 v -7.40208 h 11.10312 11.10312 v -3.70104 -3.70104 h -11.10312 -11.10312 v 3.70104 3.70104 H 107.20037 84.994131 v -3.70104 -3.70104 h -7.402082 -7.402081 v 3.70104 3.70104 h 7.402081 7.402082 v 7.40208 7.40209 h 22.206239 22.20625 z M 99.798293,106.56002 v -3.70104 h 7.402077 7.40209 v 3.70104 3.70104 h 22.20624 22.20624 v -3.70104 -3.70104 h 3.70104 3.70105 V 91.755858 80.652734 h -3.70105 -3.70104 v -3.701041 -3.701041 h -3.70104 -3.70104 V 69.549611 65.84857 h -18.5052 -18.5052 v 3.701041 3.701041 h -7.40209 -7.402077 V 69.549611 65.84857 H 77.592049 55.385805 v 3.701041 3.701041 h -7.402081 -7.402081 v 14.804165 14.804163 h 7.402081 7.402081 v 3.70104 3.70104 H 77.592049 99.798293 Z M 55.385805,88.054817 V 73.250652 H 77.592049 99.798293 V 88.054817 102.85898 H 77.592049 55.385805 Z m 29.608326,0 V 80.652734 H 73.891009 62.787887 v 7.402083 7.402082 h 11.103122 11.103122 z m 29.608329,0 V 73.250652 h 18.5052 18.5052 v 3.701041 3.701041 h 3.70104 3.70104 V 91.755858 102.85898 H 136.8087 114.60246 Z m 37.0104,0 V 80.652734 H 136.8087 122.00454 v 7.402083 7.402082 h 14.80416 14.80416 z"
+       id="path1" />
+  </g>
 </svg>
