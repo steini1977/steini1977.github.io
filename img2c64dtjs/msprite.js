@@ -56,7 +56,7 @@ function calcSprite(){
 	z=0;
 	
 
-	for(y = 0;y<22;y++){// sprite y color picker vector y<21 > y22
+	for(y = 0;y<21;y++){// sprite y color picker vector y<21 > y22
 	 for(x = 0;x<12;x++){// sprite x color picker vector	
 	
 		rd =   red(get(10+(x*20),5+y*10));
@@ -73,7 +73,7 @@ function calcSprite(){
 		catchimage[z] = dt;z+=1;
 		}
 	}	
-	for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
+	for (scnt = 0;scnt<62;scnt+=1){sprite[scnt] = 0;}
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
@@ -81,7 +81,7 @@ function calcSprite(){
 	pout ='100 data ';
 	hout = 'byte ';
     z=0;
-    for (y = 0;y<22;y+=1){// y<21 > y<22
+    for (y = 0;y<21;y+=1){
 		for (x = 0;x<12;x+=1){
 			if(catchimage[z] == 0){stroke(255,255,255);fill(255,255,255);}
 			if(catchimage[z] == 1){stroke(200,0,0);fill(200,0,0);sprite[scnt] = sprite[scnt] + pow(2,bit);}
@@ -111,6 +111,7 @@ function calcSprite(){
         document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
 	}
+
 
 
 
