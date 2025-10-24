@@ -73,7 +73,7 @@ function calcSprite(){
 		catchimage[z] = dt;z+=1;
 		}
 	}	
-	for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
+	for (scnt = 0;scnt<64;scnt+=1){sprite[scnt] = 0;}
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
@@ -82,7 +82,7 @@ function calcSprite(){
 	hout = 'byte ';
     z=0;
     for (y = 0;y<21;y+=1){
-		for (x = 0;x<11;x+=1){//<- 12 -> 11
+		for (x = 0;x<12;x+=1){
 			if(catchimage[z] == 0){stroke(255,255,255);fill(255,255,255);}
 			if(catchimage[z] == 1){stroke(200,0,0);fill(200,0,0);sprite[scnt] = sprite[scnt] + pow(2,bit);}
 			if(catchimage[z] == 2){stroke(0,200,0);fill(0,200,0);sprite[scnt] = sprite[scnt] + pow(2,bit-1);}
@@ -111,4 +111,5 @@ function calcSprite(){
         document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
 	}
+
 
