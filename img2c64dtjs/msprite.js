@@ -97,8 +97,6 @@ function calcSprite(){
 			z +=1;
 		}			  		
 	}
-	pout = pout + String(0);
-	hout = hout + hex(0,2);
 	stroke(255,255,0);
 	strokeWeight(4);
 	noFill();
@@ -109,6 +107,7 @@ function calcSprite(){
     document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
 	}
+
 
 
 
