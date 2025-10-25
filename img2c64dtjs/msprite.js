@@ -25,8 +25,8 @@ function setup() {
     background(0,0,0); // Set the background color         
 	input = createFileInput(handleFile);
 	input.position(width+10, +40);
-
 }
+
 function handleFile(file) {
   print(file);
   if (file.type === 'image') {
@@ -54,14 +54,11 @@ function draw() {if (img) {image(img, 0, 0, width/2,height)};}
 
 function calcSprite(){
 	z=0;
-	
-
 	for(y = 0;y<21;y++){// sprite y color picker vector y<21 > y22
 	 for(x = 0;x<12;x++){// sprite x color picker vector	
-	
-		rd =   red(get(10+(x*20),5+y*10));
-		gr = green(get(10+(x*20),5+y*10));
-		bl =  blue(get(10+(x*20),5+y*10));
+		 rd =   red(get(10+(x*20),5+y*10));
+		 gr = green(get(10+(x*20),5+y*10));
+		 bl =  blue(get(10+(x*20),5+y*10));
 	
 		n = 0;dt=0;test = false;
 		if (rd>128 & test == false){n = n + pow(2,0);test = true;}
@@ -108,10 +105,6 @@ function calcSprite(){
 	pout = pout + '.';hout = hout + '.';
 	pout = splitTokens(pout,',.');
 	hout = splitTokens(hout,',.');
-        document.getElementById("dump").innerHTML = pout;
+    document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
 	}
-
-
-
-
