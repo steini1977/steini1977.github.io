@@ -91,7 +91,7 @@ function calcSprite(){
 				ncnt = ncnt + 1;
 				if (ncnt != 9 && y != 21){pout = pout + String(sprite[scnt])+',';hout = hout + hex(sprite[scnt],2)+',';}
 				if (ncnt == 9 && y < 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';ncnt = 0;pout = pout + String(lcnt) + ' data ';hout = hout + 'byte ';lcnt=lcnt+1;}
-				if (ncnt == 9 && y == 21){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';}
+				if (ncnt == 9 && y == 20){pout = pout + String(sprite[scnt])+'<br>';hout = hout + hex(sprite[scnt],2)+'<br>';}
 				scnt = scnt +1;
 			}
 			z +=1;
@@ -109,6 +109,7 @@ function calcSprite(){
     document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
 	}
+
 
 
 
