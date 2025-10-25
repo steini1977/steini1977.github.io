@@ -70,7 +70,7 @@ function calcSprite(){
 		catchimage[z] = dt;z+=1;
 		}
 	}	
-	for (scnt = 0;scnt<62;scnt+=1){sprite[scnt] = 0;}
+	for (scnt = 0;scnt<63;scnt+=1){sprite[scnt] = 0;}
 	scnt = 0;
 	bit = 7;
 	ncnt = 0;
@@ -109,6 +109,7 @@ function calcSprite(){
     document.getElementById("dump").innerHTML = pout;
 	document.getElementById("dump2").innerHTML = hout;
 	}
+
 
 
 
