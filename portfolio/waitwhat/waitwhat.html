@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="who a colorblind person sees the traffic light">
+    <meta name="author" content="Stein-Ove Bratthammer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Bildegalleri</title>
+    <style>
+        body {
+		font-family: sans-serif; display: flex; gap: 20px; padding: 20px; 
+		 justify-content: center; /* Midtstiller vannrett */
+        align-items: center;     /* Midtstiller loddrett */
+        min-height: 100vh;       /* Gjør at body alltid er like høy som skjermen */
+		}
+        
+        /* Hovedskjerm */
+        .display-container {
+            border: 2px solid black;
+            width: 500px;
+            text-align: center;
+        }
+        .display-header { border-bottom: 2px solid black; padding: 10px; }
+        #main-photo { width: 100%; height: auto; display: block; }
+
+        /* Meny */
+        .menu-container {
+            border: 2px solid black;
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+        }
+        .menu-header { border-bottom: 2px solid black; margin-bottom: 10px; padding-bottom: 10px; }
+        .thumbnail {
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .thumbnail:hover { border-color: black; }
+    </style>
+</head>
+<body>
+
+    <!-- Photo Display -->
+    <div class="display-container">
+        <div class="display-header">Photo display - gallery "wait what"
+		</div>
+        <img id="main-photo" src="patternpicture.jpg" alt="Hovedbilde">
+    </div>
+
+    <!-- Photo Menu -->
+    <div class="menu-container">
+        <div class="menu-header">Photo menu</div>
+		<img class="thumbnail" src="patternpicture.jpg" onclick="changePhoto('patternpicture.jpg')">
+        <img class="thumbnail" src="NIK_1275.JPG" onclick="changePhoto('NIK_1275.JPG')">
+        <img class="thumbnail" src="NIK_1276.JPG" onclick="changePhoto('NIK_1276.JPG')">
+        <img class="thumbnail" src="NIK_1277.JPG" onclick="changePhoto('NIK_1277.JPG')">
+    </div>
+
+    <script>
+        function changePhoto(src) {
+            document.getElementById('main-photo').src = src;
+        }
+    </script>
+
+</body>
+</html>
