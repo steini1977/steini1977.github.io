@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vår reise i oslo 2026 - meg, min søster og min mor </title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://unsplash.com') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Flexbox-layout for kortene */
+        .diary-entry {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 50px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .diary-entry:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Magi-koden: Sørger for at HVERT ANDRE innlegg snur rekkefølgen automatisk */
+        .diary-entry:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Tekstinnhold */
+        .entry-content {
+            flex: 1.2;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .entry-date {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .entry-location {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .entry-title {
+            margin: 0 0 15px 0;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .entry-text {
+            margin: 0;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Bildecontainer */
+        .entry-image-container {
+            flex: 1;
+            min-height: 380px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .entry-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 60px;
+        }
+
+        /* Responsivt design for mobilskjermer */
+        @media (max-width: 768px) {
+            /* Deaktiverer vekslingen på mobil slik at alt blir likt og ryddig */
+            .diary-entry, .diary-entry:nth-child(even) {
+                flex-direction: column; 
+            }
+
+            .entry-content {
+                padding: 25px;
+            }
+
+            .entry-image-container {
+                height: 250px;
+                min-height: auto;
+            }
+
+            .entry-image {
+                position: relative;
+            }
+
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Vårt Reiseeventyr</h1>
+        <p>Vår reise i oslo 2026 - meg, min søster og min mor </p>
+    </header>
+
+    <div class="container">
+
+        <!-- Innlegg 1 (Tekst venstre, bilde høyre) -->
+        <article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14. oktober 2026</div>
+                <div class="entry-location">📍 Hjemme før avreise til Oslo</div>
+                <h2 class="entry-title">pakket og klar</h2>
+                <p class="entry-text">
+                    her hadde jeg pakket medisiner og klær og lader. i forveien hadde jeg laget med en sjekkliste av alt jeg skulle pakke. Her ble det med klær, medesiner og lader til mobil og klokke.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-01.jpg" alt="baggen jeg tok med på turen">
+            </div>
+        </article>
+
+        <!-- Innlegg 2 (Siden dette er nr 2, vil CSS automatisk sette bilde til venstre og tekst til høyre) -->
+        <article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍Oslo, hotellet</div>
+                <h2 class="entry-title">morsomt</h2>
+                <p class="entry-text">
+                Vi fikk en morsom opplevelse da vi kom inn på badet på hotellrommet. to av pumpene var i dusjen og håndsåpen over vasken.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images\oslo2026-02.jpg" alt="Eiffeltårnet i Paris">
+            </div>
+			      <div class="entry-image-container">
+                <img class="entry-image" src="images\oslo2026-03.jpg" alt="Eiffeltårnet i Paris">
+            </div>
+			      <div class="entry-image-container">
+                <img class="entry-image" src="images\oslo2026-04.jpg" alt="Eiffeltårnet i Paris">
+            </div>
+        </article>
+
+        <!-- Innlegg 3 (Blir automatisk lik innlegg 1 igjen: Tekst venstre, bilde høyre) -->
+        <article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍 Oslo, Skandic hotell Holberg</div>
+                <h2 class="entry-title">hotell = ligge i seng med klær på, helt akseptabelt</h2>
+                <p class="entry-text">
+                    vi fant aldri stikk kontakten til vannkokeren, men den dagen vi skulle forlate hotellet fant vi den. vi brukte nemlig stikk kontakten ved nattbordet.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-05.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍 på vei opp til slottet.</div>
+                <h2 class="entry-title">slottsparken er i vårstadie også</h2>
+                <p class="entry-text">
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-06.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍 ved slottet i Oslo</div>
+                <h2 class="entry-title">vi måtte jo ta bildet som minne</h2>
+                <p class="entry-text">
+                    Her er bilde av min mor og min søster ved slottet.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-07.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍 ved slottet i Oslo</div>
+                <h2 class="entry-title">rådhusplassen bak trærene</h2>
+                <p class="entry-text">
+                   det er veldig spesielt å se det så nært.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-08.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 Studentlunden i Oslo</div>
+                <h2 class="entry-title">fontene</h2>
+                <p class="entry-text">
+                   fasinerende fontene.. den hadde samme styrke hele tiden.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-10.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 Studentlunden i Oslo</div>
+                <h2 class="entry-title">Wenche Foss</h2>
+                <p class="entry-text">
+                   en av mine "barndomshelter" hun hadde en unik personlighet, alltid ett smil.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-11.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 National teateret i Studentlunden i Oslo</div>
+                <h2 class="entry-title">Bjørn Sjerne Bjørnson</h2>
+                <p class="entry-text">
+                   Husker han i Norskundervisningen på Ungdomskolen.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-12	.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 Ved stortinget i oslo. Her var det fri tale om krigen som foregår i Ukrarina</div>
+                <h2 class="entry-title">vi er så heldig å ha fri tale her i Norge</h2>
+                <p class="entry-text">
+                   Her med rød hue, smiler min mor.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-14	.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+    </div>
+
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 hotellrommet</div>
+                <h2 class="entry-title">Joda utsikt</h2>
+                <p class="entry-text">
+                   skal ikke klage.. vi var her for utelivet.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-15.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍 Lorri, Resturant</div>
+                <h2 class="entry-title">4 å velge mellom</h2>
+                <p class="entry-text">
+                   Her i oslo er utelivet herlig. Her på Lorri var det 4 alkoholfrie ølsorter å velge mellom. I motsetning til utelivet i stavanger der det er vannskelig å få slikt servert.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-16.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+
+			<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 Frokostbordene på hotellet</div>
+                <h2 class="entry-title">God frokost, mye å velge mellom</h2>
+                <p class="entry-text">
+                   Her var det alltid ett ledig, ryddig bord.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-17.jpg" alt="Tokyo om natten">
+            </div>
+        </article>	
+
+			<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 Oslo sentralstasjon, jernbane torget</div>
+                <h2 class="entry-title">Rarw!</h2>
+                <p class="entry-text">
+                   Min søster er generelt glad i katter. hun så denne og ville vær i ett foto med denne.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-18.jpg" alt="Tokyo om natten">
+            </div>
+        </article>	
+		
+			<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 Jernbanetorget</div>
+                <h2 class="entry-title">"Knus nasismen"</h2>
+                <p class="entry-text">
+                   Som minne om Osvald-gruppen, som aktivt sørget for sabotasje mote den tyske okkupasjonsmakten under andre verdenskrig.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-19.jpg" alt="Tokyo om natten">
+            </div>
+        </article>	
+
+	<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 i skogen ved Slottet</div>
+                <h2 class="entry-title">plutselig</h2>
+                <p class="entry-text">
+                  Den var plassert midt i skogen ved slottet.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-20.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 nasjonalbiblioteket(grønt) og oprahuset(hvit)</div>
+                <h2 class="entry-title">kunst og sånt</h2>
+                <p class="entry-text">
+                   Vi gikk på skråplanet på oprahuset på utsiden for å få utsikt over Oslo sentrum.
+				   Der var det faktisk galender. Utrolig nok ikke glatt. Og så gikk vi inn på Nationalbiblioteket.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-21.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍ved oprahuset.</div>
+                <h2 class="entry-title">She lies (Monica Bonvicini)</h2>
+                <p class="entry-text">
+                   Utsmykking for oprahuset. 
+				   Det er en tolkning av Casper Davids Driedens maleri som skildrer drivisen.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-22.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 rett ved oprahuset</div>
+                <h2 class="entry-title">Munch museet</h2>
+                <p class="entry-text">
+                  Det føles som det er en type arketektur formet som ett overvåkningsbygg. Men det er et musem.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-23.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 some where</div>
+                <h2 class="entry-title">«The Mother» (Moren) Tracey Emin.</h2>
+                <p class="entry-text">
+                   Den skal forestiller en knelende, aldrende kvinne som holder varsomt rundt noe usynlig, 
+				   og symboliserer en universell morsfigur.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-24.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 utenfor ingangspartiet til Nasjonalbiblioteket</div>
+                <h2 class="entry-title">"Skapning fra Iddefjord"</h2>
+                <p class="entry-text">
+                   Verket er en del av kunstprosjektet Skulpturstopp og kombinerer organiske former med en hyllest til norsk stein- og industriarbeid.
+				   Personlig synes jeg at det ser ut som en kvinne med kjole som er i ferd med å løfte en tung bøtte/gjenstand.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-27.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 inne i Nasjonalmuseumet</div>
+                <h2 class="entry-title">Hogwart?</h2>
+                <p class="entry-text">
+                   Det minner veldig om Hogwart, ett slott i Harry Potter verden.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-28.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍Den Glade Gris, i Oslo</div>
+                <h2 class="entry-title">Her også. Alkohofritt utvalg</h2>
+                <p class="entry-text">
+                   Maten smakte himmelskt. Fire alkoholfrie øltyper å velge mellom.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-29.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 folketeateret, inne</div>
+                <h2 class="entry-title">mye bra lys</h2>
+                <p class="entry-text">
+                   lyset over meg er hele taket i salen der vi var. jeg vil tippe det var 5 meter i radius.
+				   dette var før fårestillingen startet. (Les misserable) den var i norsk tale.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-30.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 folketeateret, inne</div>
+                <h2 class="entry-title">Pausen</h2>
+                <p class="entry-text">
+                 Da var det pausetid.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-31.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">x oktober 2026</div>
+                <div class="entry-location">📍 Trikk 18</div>
+                <h2 class="entry-title">ding! ding!</h2>
+                <p class="entry-text">
+                 Slik ser det ut i en trikk i Oslo.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-32.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+			<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">16 oktober 2026</div>
+                <div class="entry-location">📍 Hotellrommet</div>
+                <h2 class="entry-title">stadig Bonk!</h2>
+                <p class="entry-text">
+                  Vi dunka oss hele tiden på denne hylla.. men ingen skade.. 
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-33.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">16 oktober 2026</div>
+                <div class="entry-location">📍og her var den fine utsikten til bakgården.</div>
+                <h2 class="entry-title">ja ja..</h2>
+                <p class="entry-text">
+                  ingen sure miner.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-34.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+		
+		<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">16 oktober 2026</div>
+                <div class="entry-location">📍 ved tinghuset</div>
+                <h2 class="entry-title">jo vi dro jo dit.</h2>
+                <p class="entry-text">
+                   he he he,
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-36.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">16 oktober 2026</div>
+                <div class="entry-location">📍 ved tinghuset</div>
+                <h2 class="entry-title">stort skal det være...</h2>
+                <p class="entry-text">
+                   ble fint bildet for livet.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-37.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 Ved stortinget</div>
+                <h2 class="entry-title">Et bedre bilde</h2>
+                <p class="entry-text">
+                   Bedre lys bedre bakgrunn.
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-38.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">16 oktober 2026</div>
+                <div class="entry-location">📍 Gardemoen flyplass, Oslo</div>
+                <h2 class="entry-title">bla bla</h2>
+                <p class="entry-text">
+                   bla bla
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/gardemoen.gif" alt="Tokyo om natten">
+            </div>
+        </article>
+<!-- "C:\Users\stein\OneDrive\Dokumenter\oslo2026\images\oss.jpeg" -->
+
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">15 oktober 2026</div>
+                <div class="entry-location">📍 Den Glade gris, Resturant</div>
+                <h2 class="entry-title">og da måtte vi jo posere</h2>
+                <p class="entry-text">
+                    
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oss.jpeg" alt="Tokyo om natten">
+            </div>
+        </article>
+
+
+<article class="diary-entry">
+            <div class="entry-content">
+                <div class="entry-date">14 oktober 2026</div>
+                <div class="entry-location">📍 some where</div>
+                <h2 class="entry-title">bla bla</h2>
+                <p class="entry-text">
+                   bla bla
+                </p>
+            </div>
+            <div class="entry-image-container">
+                <img class="entry-image" src="images/oslo2026-x.jpg" alt="Tokyo om natten">
+            </div>
+        </article>
+
+		
+    </div>
+    <footer>
+        <p>&copy; 2026 Reisedagbok. Laget med kjærlighet til opplevelser.</p>
+    </footer>
+
+</body>
+</html>
