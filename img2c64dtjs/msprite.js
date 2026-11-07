@@ -18,7 +18,7 @@ let cnt=0;// sprite array counter
 let test = false;
 
 function setup() {  
-    var cvs = createCanvas(240*2, 210); // Create Canvas of given size   
+    var cvs = createCanvas(239+240, 209); // Create Canvas of given size   
     button = createButton('calculate');
     button.position(cvs.width+20, cvs.height);
     button.mousePressed(calcSprite);
@@ -36,7 +36,7 @@ function handleFile(file) {
     img = null;
   }
 }
-function draw() {if (img) {image(img, 0, 0, width/2,height)};}
+function draw() {if (img) {image(img, 0, 0, width*0.5,height)};}
 
 function calcSprite(){
 	z=0;
@@ -50,15 +50,15 @@ function handleFile(file) {
     img = null;
   }
 }
-function draw() {if (img) {image(img, 0, 0, width/2,height)};}
+function draw() {if (img) {image(img, 0, 0, width*0.5,height)};}
 
 function calcSprite(){
 	z=0;
 	for(y = 0;y<21;y++){// sprite y color picker vector y<21 > y22
 	 for(x = 0;x<12;x++){// sprite x color picker vector	
-		 rd =   red(get(10+(x*20),5+y*10));
-		 gr = green(get(10+(x*20),5+y*10));
-		 bl =  blue(get(10+(x*20),5+y*10));
+		 rd =   red(get(9+(x*20),4+y*10));
+		 gr = green(get(9+(x*20),4+y*10));
+		 bl =  blue(get(9+(x*20),4+y*10));
 	
 		n = 0;dt=0;test = false;
 		if (rd>128 & test == false){n = n + pow(2,0);test = true;}
@@ -84,7 +84,7 @@ function calcSprite(){
 			if(catchimage[z] == 1){stroke(200,0,0);fill(200,0,0);sprite[scnt] = sprite[scnt] + pow(2,bit);}
 			if(catchimage[z] == 2){stroke(0,200,0);fill(0,200,0);sprite[scnt] = sprite[scnt] + pow(2,bit-1);}
 			if(catchimage[z] == 3){stroke(0,0,200);fill(0,0,200);sprite[scnt] = sprite[scnt] + pow(2,bit)+pow(2,bit-1);}		
-			rect(width/2+x * 10 * 2,y*10,20,10);
+			rect(width*0.5+x * 10 * 2,y*10,20,10);
 			bit = bit - 2;
 			if (bit <= 0){
 				bit = 7;
