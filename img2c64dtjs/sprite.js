@@ -66,8 +66,8 @@ function calcSprite(){
 				if(catchimage[z] == 0){stroke(0,60,200);fill(0,60,200);}
 				if(catchimage[z] == 1){stroke(0,170,200);fill(0,170,200);sprite[scnt] = sprite[scnt] + pow(2,bit);} 	  
 				rect(x * 10,y*10,10,10);
-				if(catchimage[z] == 1){stroke(0,170,200);fill(0,170,200);}
-				if(catchimage[z] == 0){stroke(0,60,200);fill(0,60,200);} 	  
+				if(catchimage[z] == 1){stroke(0,60,200);fill(0,60,200);}
+				if(catchimage[z] == 0){stroke(0,170,200);fill(0,170,200);} 	  
 				rect(24*10+x * 10,y*10,10,10);
 				bit = bit - 1;
 				if (bit < 0){bit = 7;ncnt = ncnt + 1;
