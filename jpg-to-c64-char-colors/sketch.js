@@ -88,14 +88,14 @@ function draw() {
       SumGreen = floor(SumGreen * (1/5));
       SumBlue = floor(SumBlue * (1/5));
       CharCol=[255,255,255]
-      if (SumRed < 101 && SumGreen < 101 && SumBlue < 101){CharCol=[0,0,0];cout = cout + 'a'}
-      if (SumRed > 100 && SumGreen < 101 && SumBlue < 101){CharCol=[200,0,0];cout = cout + 'c'}
-      if (SumRed < 101 && SumGreen > 100 && SumBlue < 101){CharCol=[0,200,0];cout = cout + 'f'}
-      if (SumRed < 101 && SumGreen < 101 && SumBlue > 100){CharCol=[0,0,200];cout = cout + 'g'}
-      if (SumRed > 100 && SumGreen > 100 && SumBlue < 101){CharCol=[200,200,0];cout = cout + 'h'}
-      if (SumRed > 100 && SumGreen < 101 && SumBlue > 100){CharCol=[200,0,200];cout = cout + 'e'}
-      if (SumRed < 101 && SumGreen > 100 && SumBlue > 100){CharCol=[0,200,200];cout = cout + 'd'}
-      if (SumRed > 100 && SumGreen > 100 && SumBlue > 100){CharCol=[200,200,200];cout = cout + 'p'}
+      if (SumRed < 128 && SumGreen < 128 && SumBlue < 128){CharCol=[0,0,0];cout = cout + 'a'}
+      if (SumRed > 127 && SumGreen < 128 && SumBlue < 128){CharCol=[200,0,0];cout = cout + 'c'}
+      if (SumRed < 128 && SumGreen > 127 && SumBlue < 128){CharCol=[0,200,0];cout = cout + 'f'}
+      if (SumRed < 128 && SumGreen < 128 && SumBlue > 128){CharCol=[0,0,200];cout = cout + 'g'}
+      if (SumRed > 127 && SumGreen > 127 && SumBlue < 128){CharCol=[200,200,0];cout = cout + 'h'}
+      if (SumRed > 127 && SumGreen < 128 && SumBlue > 127){CharCol=[200,0,200];cout = cout + 'e'}
+      if (SumRed < 128 && SumGreen > 127 && SumBlue > 127){CharCol=[0,200,200];cout = cout + 'd'}
+      if (SumRed > 127 && SumGreen > 127 && SumBlue > 127){CharCol=[200,200,200];cout = cout + 'p'}
       byte = 0;
       if (test[0] > 32){byte += 1}
       if (test[1] > 32){byte += 2}
