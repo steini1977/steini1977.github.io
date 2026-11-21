@@ -95,7 +95,7 @@ function draw() {
       if (SumRed > 63 && SumGreen > 63 && SumBlue < 64){CharCol=[200,200,0];cout = cout + 'h'}
       if (SumRed > 63 && SumGreen < 64 && SumBlue > 63){CharCol=[200,0,200];cout = cout + 'e'}
       if (SumRed < 64 && SumGreen > 63 && SumBlue > 63){CharCol=[0,200,200];cout = cout + 'd'}
-      if (SumRed > 63 && SumGreen > 63 && SumBlue > 63){CharCol=[200,200,200];cout = cout + 'p'}
+      if (SumRed > 63 && SumGreen > 63 && SumBlue > 63){CharCol=[255,255,255];cout = cout + 'p'}
       byte = 0;
       if (test[0] > 32){byte += 1}
       if (test[1] > 32){byte += 2}
